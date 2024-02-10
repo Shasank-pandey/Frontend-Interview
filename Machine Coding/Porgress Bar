@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>bar</title>
+</head>
+<body>
+  <div id="bar-container">
+    <div id="bar"></div>
+  </div>
+  <div id="btn" onClick={show(2)}>click</div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+#bar-container {
+  width: 600px;
+  height: 60px;
+  display: block;
+  border: 1px solid grey;
+}
+
+#bar {
+  height: 60px;
+  display: block;
+  background: green;
+  width: 0%;
+}
+
+
+
+
+
+function show(val){
+  console.log(val)
+  var bar = document.getElementById("bar")
+  var widthPercent = 0
+  var interval = setInterval(()=>{
+    
+    bar.style.width = widthPercent+"%"
+    widthPercent++
+    if(widthPercent > 100) clearInterval(interval)
+  },(val * 1000)/100)
+}
