@@ -1,0 +1,49 @@
+<div class="star-rating">
+  <span class="star" data-rating="1">&#9733;</span>
+  <span class="star" data-rating="2">&#9733;</span>
+  <span class="star" data-rating="3">&#9733;</span>
+  <span class="star" data-rating="4">&#9733;</span>
+  <span class="star" data-rating="5">&#9733;</span>
+</div>
+
+
+
+
+
+Copy code
+.star-rating {
+  font-size: 24px;
+}
+
+.star {
+  cursor: pointer;
+}
+
+.star:hover,
+.star.active {
+  color: gold;
+}
+
+
+
+// Get all star elements
+const stars = document.querySelectorAll('.star');
+
+// Add click event listener to each star
+stars.forEach(star => {
+  star.addEventListener('click', function() {
+    const rating = this.getAttribute('data-rating');
+    setRating(rating);
+  });
+});
+
+// Function to set the rating and update UI
+function setRating(rating) {
+  stars.forEach(star => {
+    if (star.getAttribute('data-rating') <= rating) {
+      star.classList.add('active');
+    } else {
+      star.classList.remove('active');
+    }
+  });
+}
