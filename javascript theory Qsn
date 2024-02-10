@@ -1,0 +1,52 @@
+can we modify const declared variable?
+what is webpack and boiler plate?
+If you have 10 api call and one Api falis how do u keep track of it and explain promise.all() and promise.race() ?
+can you write constructor with arrow function?
+what is firstclass function and what is the use of !! ?
+max limit to send data in API(post)?
+while api call does cookie get send by default?
+difference between defer and async?
+how to send jwt request from client?
+what is mutability?
+js design pattern?
+what is shadow DOM?
+what is Search Engine Optimization?
+advanget and disadvantage of HTML SEMATIC tags?
+what is the difference betweeen display BLOCK and VISIBILITY none?
+how to compare two object in js?
+how to stop event capturing?
+how to use spread operator and rest parameter?
+difference between event capturing and event bubling?
+what is static function?
+when we pass argument in js function ...it is callby reference or call by value?
+how many ways u can create object in js?  diff between "new" and Object.create()?
+local storge vs cookies? if i open two tabs in browser of same app then can i access session storage of one tab on another tab?
+advantage and disadvantage of cookie?
+what is docker?
+throttling in javascript?
+what is debouncing?
+what is the need of use bind,apply,call?
+what is event loop?
+what drawback of event bubling?
+what is socket.io and how to use in react/angular?
+how to use realtime data which is changing in very less time?
+what is strict mode in javascript?
+what is prototype?
+what is prototype chaining?
+what is callback function and callback hell?
+various uses of promise?
+async type in JS?
+javascript clousure?
+difference between observable and promise?
+what is arrow function and its advantages?....(nned to clear arrow function this binding)
+Explain the difference between JSON.stringify() and JSON.parse()
+When should we use localstorage , session storage and cookies?
+what is then() method and its uses ?    
+explain methodes===> [call,bind,apply,sort,filter,map,concat,reverse,split,join,reduce,findIndex,
+indexOf,find,replace,insertAdjacentHtml(),slice(),focus,Object.create,pop,unshift,shift,keyCodes]
+how to convert object to array?
+what is web worker?
+what is currying function?
+how to prevent right click on websitev by Javascript?...........
+what is the difference between functional and Object oriented programing?(pros and cosn also)
+what is the difference between object composition and inheritance?
