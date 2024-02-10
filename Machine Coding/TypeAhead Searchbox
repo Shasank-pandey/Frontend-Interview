@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Typeahead Search</title>
+</head>
+<body>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Type to search">
+    <ul id="suggestions"></ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+.search-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: none;
+}
+
+li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #f2f2f2;
+}
+
+
+
+
+
+
+
+const countries = [
+  'United States',
+  'Canada',
+  'United Kingdom',
+  'Australia',
+  'Germany',
+  'France',
+  'Japan',
+  'China',
+  'India',
+  'Brazil',
+  'South Korea',
+];
+
+
+const searchInput = document.getElementById('searchInput');
+const suggestions = document.getElementById('suggestions');
+
+
+searchInput.addEventListener('input',searchBuddy)
+
+function searchBuddy(){
+  const input = searchInput.value.toLowerCase();
+  let countryList = countries.filter(item => item.toLowerCase().includes(input))
+  console.log(countryList)
+  //update UI
+  if(countryList.length === 0 ) suggestions.style.display = "none"
+  else {
+    countryList.forEach(item=>{
+      suggestions.style.display = "block"
+      let lidiv = document.createElement('li')
+      lidiv.textContent = item
+      //console.log(listDiv)
+      lidiv.addEventListener('click',()=>{
+        searchInput.value = item
+        suggestions.style.display = "none"
+      })
+      suggestions.appendChild(lidiv);
+      
+    })
+    
+  }
+}
