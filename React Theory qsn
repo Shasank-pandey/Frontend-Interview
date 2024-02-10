@@ -1,0 +1,53 @@
+react router, detail about history?
+whta is the difference between react-dom,react-router-dom and react-fabric?
+how to achive shouldcomponentUpdate, ComponentdidUpdate, componentDidMount in react hooks?
+how virtual dom reacts to change in parent component and a chained child component?
+explain how hooks get invoked in react functional component?
+********TOUGH************
+router gaurd in react as per user(admin/guest) ?
+difference between observable and promise?
+what is interceptor?
+token refersh and token exchange in react?
+can u can cancel a promise?
+what is dynamic component loader?
+authentication and security in react?
+what is the purpose of render() in react?
+when angular and when react?
+memory leakage in redux?
+how to solve CORS error and handle dev API in local?
+*************************
+when to use class based and functional based compoenent?
+why class based is havier than functional based component?
+can we mutate props of child component?
+proptypes?
+why componentdidupdate?
+is constructor part of lifesycle method  OR it is mandatory?
+can u use classs based component inside functional component?
+why reducer has to be pure functions?
+diffrnce between export default and export by name?
+what is redux form?
+difference between state and props? and how to change props in child component?
+what is pure component and what is the use and drawback?
+hwo to improve performance of a website?
+explain authorization and authentication process?
+what is the use oh middleware?
+what is sythetic event in react?
+what is pure function?
+how can we achive componentWillUnmount,componentDidMount,ShoudComponentUpdate in react functional component?
+virtual dom psedu code?
+can we use multiple context api? if yes then why?.....
+why redux over flux?
+aria,meta tag in html? css selectors? why class than id?.....
+explain all react hook?
+what is the difference between real DOM and virtual DOM?....
+explain how react app start from begining?....
+how can u pass data between siblings component?.....
+can you do this.setState() in render() method?....
+difference between class and functional componenents?.....
+what is conttrolled and uncontrolled input filed?(ref is uncontrolled AND state is controlled).....
+setState is async or sync function?
+what is highe-order-component(HOC)?
+
+
+//////////////////////*****LINKS******//////////////////////
+https://beetechnical.com/interview-questions/top-50-react-interview-questions-and-answers-for-2020/?fbclid=IwAR1vaZKMECpkdtqFHPtZcpC95kAFEwEEQ7wv8CfUr0-WSyrbU5dHWScMxzY
