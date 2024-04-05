@@ -41,3 +41,30 @@ plusMinus(2)(3)(4)() // return 2 + 3 - 4 = 1
 Write currying function addition function sum(2)(3)(5).
 
 	write a prototype function of array which gives even number from that array. [ Array.even()]
+
+write function to memoize parama and decide need to execute function or cached?
+/****/
+const sum = (a, b, c) => a + b + c;
+ 
+const memoizeOne = (cb) => {
+//implement your code
+}
+};
+ 
+const memoizedSum  = memoizeOne(sum);
+memoizedSum(1,2,3); // Executed
+memoizedSum(1,2,3); // Cached
+ 
+memoizedSum(1,2,'3'); // Executed
+memoizedSum(1,2,'3'); // Cached
+ 
+const obj1 = { a: 123 };
+ 
+memoizedSum(obj1, 2, 3); // Executed
+memoizedSum(obj1, 2, 3); // Cached
+ 
+memoizedSum({ a: 123 }, 2, 3); // Executed
+memoizedSum({ a: 123 }, 2, 3); // Executed
+ 
+memoizedSum(1,2,3); // Executed
+/****/
