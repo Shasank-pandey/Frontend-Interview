@@ -1,0 +1,26 @@
+console.log(1);
+setTimeout(() => {
+  console.log(2);
+}, 0);
+Promise.resolve(3).then(res => {
+    console.log(res);
+    setTimeout(() => {
+      console.log(7);
+    }, 100);
+ 
+    setTimeout(() => {
+      console.log(8);
+    }, 0);
+});
+setTimeout(() => {
+  console.log(4);
+}, 100);
+setTimeout(() => {
+  console.log(9);
+}, 0);
+ 
+setTimeout(() => {
+  console.log(5);
+}, -100);
+ 
+console.log(6);
