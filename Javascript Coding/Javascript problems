@@ -68,3 +68,20 @@ memoizedSum({ a: 123 }, 2, 3); // Executed
  
 memoizedSum(1,2,3); // Executed
 /****/
+
+write a pollyfill for javascript new keyword ?
+/**/
+function Student(name, age) {
+  this.name = name;
+  this.age = age;
+}
+var s1 = new Student('test', 18);
+console.log(s1);
+
+function MyNew() {
+// Need to implement custom new
+}
+
+var s2 = MyNew(Student, 'test', 18);
+console.log(s2);
+/**/
