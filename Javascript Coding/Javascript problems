@@ -8,6 +8,8 @@
 
 # Important POLLYFILL (map,reduce,filter,bind,Promise.All,Promise)
 
+# You have sub-rotated sorted array. Write ur custom binary search logic.
+
 # Implement a method to print the numbers from 1 to 10 at 1 second interval between two consecutive numbers .
 
 # Write a currying function which will take n number of arguments and will do ADD and MINUS alternately.
