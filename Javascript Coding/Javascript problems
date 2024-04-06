@@ -1,87 +1,88 @@
-	Currying – write function to find sum- 
-Sum(1,2,3)(1,2)(3) – when there is blank param return.
-	Sort array of object by their name and dateOfBirth?
-	For an array of asynchronous functions, each of them returning a promise, write code to execute all the functions in the array serially
-Write code to execute all the functions in the array serially such that f2 runs only after f1 completes, f3 runs only after f2 completes, and so on.
-	Important POLLYFILL (map,reduce,filter,bind,Promise.All,Promise)
+# Currying – write function to find sum , Sum(1,2,3)(1,2)(3) – when there is blank param return.
 
-	Implement a method to print the numbers from 1 to 10 at 1 second interval between two consecutive numbers .
-	Write a currying function which will take n number of arguments and will do ADD and MINUS alternately.
-plusMinus()  // return 0
-plusMinus(2)(3)(4)() // return 2 + 3 - 4 = 1
-   plusMinus(2)(3)(4)(5)(6)() // return 2 + 3 - 4 + 5 - 6 = 0
+# Sort array of object by their name and dateOfBirth?
 
-	Write a recursive function for flattening nested array [1,2,[3],[[4]],[5,6]]  [1,2,3,4,5,6]
-	Write a function that given two stings ransomNote and magazine, return true if ransomNote can be constructed from magazine and false otherwise Each letter in magazine can only be used once in ransomNote.
+# For an array of asynchronous functions, each of them returning a promise, write code to execute all the functions in the array serially
+
+# Write code to execute all the functions in the array serially such that f2 runs only after f1 completes, f3 runs only after f2 completes, and so on.
+
+# Important POLLYFILL (map,reduce,filter,bind,Promise.All,Promise)
+
+# Implement a method to print the numbers from 1 to 10 at 1 second interval between two consecutive numbers .
+
+# Write a currying function which will take n number of arguments and will do ADD and MINUS alternately.
+    Example : 
+	plusMinus()  // return 0
+	plusMinus(2)(3)(4)() // return 2 + 3 - 4 = 1
+	plusMinus(2)(3)(4)(5)(6)() // return 2 + 3 - 4 + 5 - 6 = 0
+
+# Write a recursive function for flattening nested array [1,2,[3],[[4]],[5,6]]  [1,2,3,4,5,6]
+
+# Write a function that given two stings ransomNote and magazine, return true if ransomNote can be constructed from magazine and false otherwise Each letter in magazine can only be used once in ransomNote.
+
+# Given a particular DOM , calculate count of all DOM-NODES and print.
+
+# Find relevant words in sentence and remove all extra charater(? , . ! [ ])
+
+# Write a function to add all element in array (without reduce,map,any loop) (recursion)
+
+# Write a function which takes one object and return a cloned object of parameter but with different reference?
+
+# Write a prototype function even and attach to prototype to an array which returns an even element.
+
+# Write polyfill of (Promise,call,apply,bind,map,filter,reduce,Map(),)
+
+# Implement throttling and debouncing in javascript.
+
+# from an array of object print those object whose age is greater than 24 and less than 30 and also remove duplicate from the array of object?
+
+# You have a array of object create a map from that and accumulate all the common value?
+
+# reverse word in sentence...I/P-> "React Developer"  O/P--> "tcaeR repoleveD" ?
+
+# Write currying function addition function sum(2)(3)(5).
+
+# write a prototype function of array which gives even number from that array. [ Array.even()]
+
+# write function to memoize parama and decide need to execute function or cached?
+Example:
+	const sum = (a, b, c) => a + b + c;
+	 
+	const memoizeOne = (cb) => {
+	//implement your code
+	}
+	};
+	 
+	const memoizedSum  = memoizeOne(sum);
+	memoizedSum(1,2,3); // Executed
+	memoizedSum(1,2,3); // Cached
+	 
+	memoizedSum(1,2,'3'); // Executed
+	memoizedSum(1,2,'3'); // Cached
+	 
+	const obj1 = { a: 123 };
+	 
+	memoizedSum(obj1, 2, 3); // Executed
+	memoizedSum(obj1, 2, 3); // Cached
+	 
+	memoizedSum({ a: 123 }, 2, 3); // Executed
+	memoizedSum({ a: 123 }, 2, 3); // Executed
+	 
+	memoizedSum(1,2,3); // Executed
 
 
-	Given a particular DOM , calculate count of all DOM-NODES and print.
-
-	Find relevant words in sentence and remove all extra charater(? , . ! [ ])
-
-
-	Write a function to add all element in array (without reduce,map,any loop) (recursion)
-
-	Write a function which takes one object and return a cloned object of parameter but with different reference?
-
-
-	Write a prototype function even and attach to prototype to an array which returns an even element.
-
-	Write polyfill of (Promise,call,apply,bind,map,filter,reduce,Map(),)
-
-
-	Implement throttling and debouncing in javascript.
-
-	from an array of object print those object whose age is greater than 24 and less than 30 and also remove duplicate from the array of object?
-
-	You have a array of object create a map from that and accumulate all the common value?
-
-	reverse word in sentence...I/P-> "React Developer"  O/P--> "tcaeR repoleveD" ?
-
-Write currying function addition function sum(2)(3)(5).
-
-	write a prototype function of array which gives even number from that array. [ Array.even()]
-
-write function to memoize parama and decide need to execute function or cached?
-/****/
-const sum = (a, b, c) => a + b + c;
- 
-const memoizeOne = (cb) => {
-//implement your code
-}
-};
- 
-const memoizedSum  = memoizeOne(sum);
-memoizedSum(1,2,3); // Executed
-memoizedSum(1,2,3); // Cached
- 
-memoizedSum(1,2,'3'); // Executed
-memoizedSum(1,2,'3'); // Cached
- 
-const obj1 = { a: 123 };
- 
-memoizedSum(obj1, 2, 3); // Executed
-memoizedSum(obj1, 2, 3); // Cached
- 
-memoizedSum({ a: 123 }, 2, 3); // Executed
-memoizedSum({ a: 123 }, 2, 3); // Executed
- 
-memoizedSum(1,2,3); // Executed
-/****/
-
-write a pollyfill for javascript new keyword ?
-/**/
-function Student(name, age) {
-  this.name = name;
-  this.age = age;
-}
-var s1 = new Student('test', 18);
-console.log(s1);
-
-function MyNew() {
-// Need to implement custom new
-}
-
-var s2 = MyNew(Student, 'test', 18);
-console.log(s2);
-/**/
+# write a pollyfill for javascript new keyword ?
+Example:
+	function Student(name, age) {
+	  this.name = name;
+	  this.age = age;
+	}
+	var s1 = new Student('test', 18);
+	console.log(s1);
+	
+	function MyNew() {
+	// Need to implement custom new
+	}
+	
+	var s2 = MyNew(Student, 'test', 18);
+	console.log(s2);
