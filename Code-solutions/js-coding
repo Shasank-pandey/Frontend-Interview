@@ -1,0 +1,56 @@
+Implement caching/memoized callback function ?
+
+solution :
+
+const sum = (a, b, c) => a + b + c;
+
+  const checkDeep=(map,param)=>{
+    const arr =  Array.from(map.keys())[0]
+    if(arr.length !== param.length) return false
+    let flag = false
+    for(let i=0;i<arr?.length;i++){
+      if(arr[i]!==param[i]){
+        flag = true
+      }
+    }
+    return flag
+  }
+
+  const memoizeOne = (cb) => {
+    let map = new Map()
+    return (...param)=>{
+      if(map.size !== 0){
+        if(checkDeep(map,param)){
+          console.log("DIFFERENT",cb(...param))
+          map.set(param, cb(...param));
+          return cb(...param)
+        }
+        else {
+          console.log("if already present",map,param)
+          return map.get(param)
+        }
+      }
+      else {
+        console.log("first time",cb(...param))
+        map.set(param, cb(...param));
+        return cb(...param)
+      }
+    }
+  }
+   
+  const memoizedSum  = memoizeOne(sum);
+  console.log(memoizedSum(1,2,3)); // Executed
+  console.log(memoizedSum(1,2,3)); // Cached
+   
+  console.log(memoizedSum(1, 2, '3')); // Executed
+console.log(memoizedSum(1, 2, '3')); // Cached
+
+const obj1 = { a: 123 };
+
+console.log(memoizedSum(obj1, 2, 3)); // Executed
+console.log(memoizedSum(obj1, 2, 3)); // Cached
+
+console.log(memoizedSum({ a: 123 }, 2, 3)); // Executed
+console.log(memoizedSum({ a: 123 }, 2, 3)); // Executed
+
+console.log(memoizedSum(1, 2, 3)); // Executed
