@@ -1,1 +1,14 @@
 
+Array.prototype.myReduce = function(cb, initialValue) {
+  let accumulator = initialValue !== undefined ? initialValue : this[0];
+  for (let i = initialValue !== undefined ? 0 : 1; i < this.length; i++) {
+    accumulator = cb(accumulator, this[i], i, this);
+  }
+  return accumulator;
+};
+
+
+const nums = [1, 2, 3, 4, 5];
+const sum = nums.myReduce((acc, curr) => {
+  return acc + curr;
+}, 0);
