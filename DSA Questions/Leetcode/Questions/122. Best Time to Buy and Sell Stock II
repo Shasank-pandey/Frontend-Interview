@@ -1,0 +1,19 @@
+// hmne socha ki jis idx pr mai khadi hu usi din mai share le kr usi din sell kr sakti toh maxSell hmne find kia including idx value...
+// fir hum maxProfit ko update kr rhe.. agr jis idx pr mai hu usko maan lu ki maine khrida us din or abhi tk ka maxSell price jo hai usme se cut kru toh mera profit aayega toh maxProfit se compare..ab kisi idx pr aa kr esa hua ki maxSell - prices[idx] < maxProfit..toh mtlb iss idx ke piche mtlb(idx+1 ke aage vala) array jo hum travserse kr aaye vha se ek profit mil chuka hme..isiliye hmne dubara se maxSell ko initialise kia jis idx pr hum khde hai..or maxProfit ko 0 mark kia and output mei plus kia hmara potential maxProfit
+
+var maxProfit = function(prices) {
+    let maxProfit = 0;
+    let maxSell = 0;
+    let output = 0;
+    for(let idx = prices.length - 1; idx >= 0; idx--){
+        maxSell = Math.max(maxSell,prices[idx]);
+        maxProfit = Math.max(maxProfit, maxSell - prices[idx]);
+        if(maxSell-prices[idx] < maxProfit){
+            output += maxProfit;
+            maxProfit = 0;
+            maxSell = prices[idx];
+        }
+    }
+    return output + maxProfit;
+    
+};
