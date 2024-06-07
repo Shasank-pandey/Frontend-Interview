@@ -1,0 +1,50 @@
+// [8,8,8,8] // target = 8
+// hmne agr hmara target mid pr mil gya tb hi kuch kaam krna otherwise toh recursion km krega
+// agr target mid pr hai toh - hme left mei v recursion bhejna, right mei v...bcz ho sakta same target element left or right mei dono side ho mid ke...
+// ab left recursiveAns v ek array le kr aayega..toh hme iska 0th ix check krna ki vha -1 toh ni..
+// -1 ka mtlb left mei toh ni hai...toh mtlb mid hmara smallest id bnega...
+// ab same story right ke liye hai...agr right recursiveAns ke 1th idx pr kuch hua toh vo hmara last idx bnega potential ans mei otherwise mid toh hai hi
+var searchRange = function(nums, target) {
+    return searchRangeHelper(nums,target,0,nums.length-1);
+    
+};
+
+function searchRangeHelper(nums,target,si,ei){
+    if(si > ei){
+        return [-1,-1];
+    }
+    if(si == ei){
+        if(target == nums[si])
+        return [si,si];
+        else return [-1,-1];
+    }
+    const mid = Math.floor((si+ei)/2);
+    if(target < nums[mid]){
+        return searchRangeHelper(nums,target,si,mid-1);
+    }
+    else if(target > nums[mid]){
+        return searchRangeHelper(nums,target,mid+1,ei);
+    }
+    else{
+        const leftAns = searchRangeHelper(nums,target,si,mid-1);
+        const rightAns = searchRangeHelper(nums,target,mid+1,ei);
+        const myAns = [];
+        if(leftAns[0] != -1){
+            myAns.push(leftAns[0])
+        }
+        else {
+            myAns.push(mid)
+        }
+        
+        if(rightAns[1] != -1){
+            myAns.push(rightAns[1])
+        }
+        else {
+            myAns.push(mid)
+        }
+        
+        return myAns;
+    }
+    return [-1,-1];
+    
+}
