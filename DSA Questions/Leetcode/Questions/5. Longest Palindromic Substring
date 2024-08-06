@@ -1,0 +1,42 @@
+var longestPalindrome = function(s) {
+    if(s.length == 0){
+        return s;
+    }
+    let si = 0;
+    let ei = s.length-1;
+    const memo = Array.from({ length: s.length }, () => Array(s.length).fill(null));
+    return longestPalindromeHelper(s,si,ei,memo);
+    
+};
+    
+function longestPalindromeHelper(s, si, ei, memo){
+    if(si > ei){
+        return "";
+    }
+    if(si == ei){
+        return s.substring(si,ei+1);
+    }
+    if(memo[si][ei] != null){
+        return memo[si][ei];
+    }
+    if(isPalindrome(s,si,ei)){
+        return memo[si][ei] = s.substring(si,ei+1);
+    }
+    let op1 = longestPalindromeHelper(s,si+1,ei,memo);
+    let op2 = longestPalindromeHelper(s,si,ei-1,memo);
+    if(op1?.length >= op2?.length){
+        return memo[si][ei] = op1;
+    }
+    else return memo[si][ei] = op2;   
+} 
+
+function isPalindrome(str,si,ei){
+    while(si < ei){
+        if(str[si] != str[ei]){
+            return false;
+        }
+        si++;
+        ei--;
+    }
+    return true;
+}
