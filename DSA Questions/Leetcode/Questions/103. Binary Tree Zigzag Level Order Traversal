@@ -1,0 +1,34 @@
+var zigzagLevelOrder = function (root) {
+  if (root == null) return [];
+  const res = [];
+  const stack1 = [];
+  const stack2 = [];
+  stack1.push(root);
+  while (stack1.length || stack2.length) {
+    let subRes = [];
+    while (stack1.length) {
+      const top = stack1.pop();
+      subRes.push(top.val);
+      if (top.left != null) {
+        stack2.push(top.left);
+      }
+      if (top.right != null) {
+        stack2.push(top.right);
+      }
+    }
+    subRes.length && res.push(subRes);
+    subRes = [];
+    while (stack2.length) {
+      const top = stack2.pop();
+      subRes.push(top.val);
+      if (top.right != null) {
+        stack1.push(top.right);
+      }
+      if (top.left != null) {
+        stack1.push(top.left);
+      }
+    }
+    subRes.length && res.push(subRes);
+  }
+    return res;
+};
