@@ -80,5 +80,16 @@ Concepts to cover
  - Practice below
     - Easy & Medium level [Top Interview Q|ans](https://leetcode.com/studyplan/top-interview-150/)
     - Easy & Medium level [Walmart labs specific Q|ans](https://leetcode.com/company/walmart-labs/?favoriteSlug=walmart-labs-thirty-days) [first do 3 months. then 6 months and so on]
+  
+## CSS -
+ - Box Model
+ - CSS flex Box
+ - CSS grid
+ - Positioning (static, relative, absolute, fixed, sticky)
+ - CSS Units (px, em, rem, %, vh, vw, etc.)
+ - Responsive Design Principles (in addition to media queries)
+ - CSS Animations and Transitions
+ - Pseudo-classes and Pseudo-elements, shadow dom
+ - React Styled Component
 
 
