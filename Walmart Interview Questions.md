@@ -49,7 +49,7 @@ Implement Polyfills for below builtIn functions
  - Throttle
  - customSetInterval
  - Polyfill for **new** keyword in JS
- -  write function to memoize parama and decide need to execute function or cached?
+ -  write function to memoize param and decide need to execute function or cached?
 
 ## React App - Machine Coding
  - Todo Component with CRUD features 
