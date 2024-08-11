@@ -47,7 +47,7 @@ Implement Polyfills for below builtIn functions
  - Array.reduce
  - Debounce 
  - Throttle
- - customSetInterval
+ - customSetInterval (stop, resume, pause)
  - Polyfill for **new** keyword in JS
  -  write function to memoize param and decide need to execute function or cached?
 
