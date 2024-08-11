@@ -79,6 +79,6 @@ Concepts to cover
  - LinkedLists (Should be least Priority)
  - Practice below
     - Easy & Medium level [Top Interview Q|ans](https://leetcode.com/studyplan/top-interview-150/)
-    - Easy & Medium level [Walmart labs specific Q|ans](https://leetcode.com/company/walmart-labs/?favoriteSlug=walmart-labs-thirty-days)
+    - Easy & Medium level [Walmart labs specific Q|ans](https://leetcode.com/company/walmart-labs/?favoriteSlug=walmart-labs-thirty-days) [first do 3 months. then 6 months and so on]
 
 
