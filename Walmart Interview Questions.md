@@ -3,7 +3,7 @@ This works as a basic crash course for most of the interviews especially for Wal
 
 ## React Basics
  - Important Hooks -  useState |  useEffect | useRef | useReducers | useCallback | useMemo
- - How can we achieve Life cycle methods in Functional based React Components.
+ - How can we achieve class based componens Life cycle methods in Functional based React Components.
  - React Router, React Router Dom
 
 ## Custom Hooks
