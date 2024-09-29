@@ -10,10 +10,14 @@ This works as a basic crash course for most of the interviews especially for Wal
 Implement below Custom Hooks
  - useLocalStorage
  - useDebounce
+ - useThrottle
  - useToggle
  - usePrevious
  - useOnClickOutside
  - useMediaQuery
+ - useFetch
+ - useIsOnline
+
 ## Core JS
 Go through below Topics
  - this
@@ -60,6 +64,8 @@ Implement Polyfills for below builtIn functions
  - Light / Dark Theme
  - OTP Input Component
  - Nested File System
+ - Tic Tac Toe (rare)
+ - React Virtulization
 
 ## Redux 
  - Explain **Redux** End-to-End.
