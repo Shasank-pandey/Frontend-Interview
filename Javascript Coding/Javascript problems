@@ -88,3 +88,27 @@ Example:
 	
 	var s2 = MyNew(Student, 'test', 18);
 	console.log(s2);
+
+# Transform Object as below I/O
+Input: 
+const objInput = {
+ name : {
+ 	inner1 : "shasank",
+  inner2 : {
+  	test: 34
+  }
+ },
+ child : {
+ 	city: "bangalore",
+ },
+ age: 24
+}
+
+Output: 
+{
+name_inner1:"shasank",
+name_inner2_test:34,
+child_city:"bangalore",
+age:24
+} 
+
