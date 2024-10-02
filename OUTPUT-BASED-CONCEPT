@@ -1,0 +1,23 @@
+1. Async Await
+      - with or without await keyword in async function usecase
+      - code snippets with try catch blocks
+2. Promise
+      - Resolving promise 
+      - Promise creation
+3. closure
+4. Hoisting
+      - Lexical scope
+      - let const var scoping
+      - repetative same name variable in same code usecase
+5. This Keyword 
+      - "this" under normal function
+      - "this" under arrow function
+      - combination of both of the above
+      - "this" under Object creation by new
+6. Event loops - 
+      - Mix of setTimeout and sync codes
+      - Mix of Promise , async await , set Timeout and sync codes
+7. MIX of sync - async code snippet
+8. call, apply , bind
+      - context changes with arrow and normal function combination
+9. constructor functions - new keyword Object creation
