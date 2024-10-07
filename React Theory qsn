@@ -1,5 +1,8 @@
 react router, detail about history?
-whta is the difference between react-dom,react-router-dom and react-fabric?
+Can we use usestate inside useEffect? why ?
+what is the difference between Context API and Redux ?
+What if i click on a button to update a counter state in react rapidly? will I get updated state? If not how to avoid stale state and take prev state?
+what is the difference between react-dom,react-router-dom and react-fabric?
 how to achive shouldcomponentUpdate, ComponentdidUpdate, componentDidMount in react hooks?
 how virtual dom reacts to change in parent component and a chained child component?
 explain how hooks get invoked in react functional component?
@@ -33,19 +36,15 @@ explain authorization and authentication process?
 what is the use oh middleware?
 what is sythetic event in react?
 what is pure function?
-how can we achive componentWillUnmount,componentDidMount,ShoudComponentUpdate in react functional component?
 virtual dom psedu code?
 can we use multiple context api? if yes then why?.....
 why redux over flux?
 aria,meta tag in html? css selectors? why class than id?.....
-explain all react hook?
 what is the difference between real DOM and virtual DOM?....
 explain how react app start from begining?....
-how can u pass data between siblings component?.....
-can you do this.setState() in render() method?....
-difference between class and functional componenents?.....
+can you do this.setState() in render() method?
+difference between class and functional componenents?
 what is conttrolled and uncontrolled input filed?(ref is uncontrolled AND state is controlled).....
-setState is async or sync function?
 what is highe-order-component(HOC)?
 
 
