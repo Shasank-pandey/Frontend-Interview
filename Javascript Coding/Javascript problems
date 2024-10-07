@@ -1,7 +1,5 @@
 # Currying – write function to find sum , Sum(1,2,3)(1,2)(3) – when there is blank param return.
 
-# Sort array of object by their name and dateOfBirth?
-
 # For an array of asynchronous functions, each of them returning a promise, write code to execute all the functions in the array serially
 
 # Write code to execute all the functions in the array serially such that f2 runs only after f1 completes, f3 runs only after f2 completes, and so on.
@@ -40,13 +38,9 @@
 
 # You have a array of object create a map from that and accumulate all the common value?
 
-# reverse word in sentence...I/P-> "React Developer"  O/P--> "tcaeR repoleveD" ?
-
 # Write currying function addition function sum(2)(3)(5).
 
-# write a prototype function of array which gives even number from that array. [ Array.even()]
-
-# write function to memoize parama and decide need to execute function or cached?
+# write function to memoize param and decide need to execute function or cached?
 Example:
 	const sum = (a, b, c) => a + b + c;
 	 
@@ -89,7 +83,7 @@ Example:
 	var s2 = MyNew(Student, 'test', 18);
 	console.log(s2);
 
-# Transform Object as below I/O
+# Transform(flatten) Object as below ,
 Input: 
 const objInput = {
  name : {
@@ -103,6 +97,7 @@ const objInput = {
  },
  age: 24
 }
+
 
 Output: 
 {
