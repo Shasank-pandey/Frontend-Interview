@@ -1,8 +1,12 @@
-1. Explain CDN caching / CDN optimization
+1. Explain CDN caching / CDN optimizatio
 2. Explain all types of Rendering in UI.
 3. Expain SSO- pingfed .
 4. Explain hopw we can export a app / library by package?
 5. Explain Webpack or any bundler for build process ?
 6. Explain Microfrontend Architecture.
 8. Explain KOA server / node server for serving UI build code ?
-9. 
+9. Different types of caching
+10. Browser storage and their usecase
+11. TTL caching
+12. Index DB
+13. Service worker and web worker
