@@ -1,5 +1,5 @@
 # React JS and Javascript
-This works as a basic crash course for most of the interviews especially for Walmart.
+This works as a basic crash course for most of the interviews especially for <Product Company>.
 
 ## React Basics
  - Important Hooks -  useState |  useEffect | useRef | useReducers | useCallback | useMemo
@@ -86,7 +86,7 @@ Concepts to cover
  - BST Tree traversal related Questions
  - Practice below
     - Easy & Medium level [Top Interview Q|ans](https://leetcode.com/studyplan/top-interview-150/)
-    - Easy & Medium level [Walmart labs specific Q|ans](https://leetcode.com/company/walmart-labs/?favoriteSlug=walmart-labs-thirty-days) [first do 3 months. then 6 months and so on]
+    - Easy & Medium level [<Product Company> labs specific Q|ans](https://leetcode.com/company/walmart-labs/?favoriteSlug=walmart-labs-thirty-days) [first do 3 months. then 6 months and so on]
   
 ## CSS -
  - Box Model
