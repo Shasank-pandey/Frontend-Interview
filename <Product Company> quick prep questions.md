@@ -5,6 +5,7 @@ This works as a basic crash course for most of the interviews especially for <Pr
  - Important Hooks -  useState |  useEffect | useRef | useReducers | useCallback | useMemo
  - How can we achieve class based componens Life cycle methods in Functional based React Components.
  - React Router, React Router Dom
+ - How react works internally , React fiber, React batching, virtual DOM, diffing algo, reconsilation
 
 ## Custom Hooks
 Implement below Custom Hooks
@@ -98,5 +99,18 @@ Concepts to cover
  - CSS Animations and Transitions
  - Pseudo-classes and Pseudo-elements, shadow dom
  - React Styled Component
+
+## HTML - 
+ - SEO
+ - semantic tags
+ - 2d and 1D elements
+ - whats new is HTML5?
+
+## Networking - 
+ - what is CDN ?
+ - when you type a url browser and hit enter , explain all process step by step?
+ - browser storage ? their usecase?
+ - web worker and service worker ?
+ - different Caching mechanism?
 
 
