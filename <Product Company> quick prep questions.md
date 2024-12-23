@@ -2,8 +2,7 @@
 This works as a basic crash course for most of the interviews especially for <Product Company>.
 
 ## React Basics
- - How react works internally?
- - 
+ - How react works internally? (https://react.dev/learn/queueing-a-series-of-state-updates)
  - Important Hooks -  useState |  useEffect | useRef | useReducers | useCallback | useMemo
  - React.Memo
  - How can we achieve class based componens Life cycle methods in Functional based React Components.
