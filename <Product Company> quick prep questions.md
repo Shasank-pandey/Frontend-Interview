@@ -2,10 +2,17 @@
 This works as a basic crash course for most of the interviews especially for <Product Company>.
 
 ## React Basics
+ - How react works internally?
+ - 
  - Important Hooks -  useState |  useEffect | useRef | useReducers | useCallback | useMemo
+ - React.Memo
  - How can we achieve class based componens Life cycle methods in Functional based React Components.
  - React Router, React Router Dom
- - How react works internally , React fiber, React batching, virtual DOM, diffing algo, reconsilation
+ - React fiber
+ - React batching
+ - Virtual DOM
+ - Diffing algo
+ - Reconsilation
 
 ## Custom Hooks
 Implement below Custom Hooks
