@@ -37,7 +37,7 @@ Go through below Topics
  - Event Loop
  - Async / Await
  - setTimeout / setTimeInterval
- - Prototype
+ - Prototype and its inheritance
  - Callback
  - Practice  Questions for better JS Implementation
     - Call Promise one by one
@@ -116,12 +116,32 @@ Concepts to cover
  - CSS Animations and Transitions
  - Pseudo-classes and Pseudo-elements, shadow dom
  - React Styled Component
+ - Modern CSS Features (SCSS and LESS)
+ - Accessibility (A11Y) in CSS (Focus Management,Prefers Reduced Motion)
+ - CSS Variables & Custom Properties (var(--custom-variable),Theming with CSS Variables)
+ - Performance & Rendering Optimization (CSS Paint & Composite Stages,Will-Change Propert,Critical CSS & Render Blocking CSS)
+ - Advanced Layout & Responsiveness (CSS Container Queries,Subgrid in CSS Grid,CSS Scroll Snap,Aspect Ratio )
 
 ## HTML - 
  - SEO
  - semantic tags
  - 2d and 1D elements
  - whats new is HTML5?
+ - Lazy Loading
+ - Preload, Prefetch, and Preconnect
+ - Defer vs Async
+ - Content Delivery Networks (CDN)
+ - Accessibility (ARIA roles & attributes,Keyboard navigation,Screen readers & semantic HTML,Forms accessibility)
+ - Forms & Validations
+ - CSP (Content Security Policy)
+ - SameSite cookies
+ - HTML Injection Risks
+ - Advanced HTML Elements (<template> & <slot>,<dialog>,<details> & <summary>,)
+ - Shadow DOM
+ - HTML Imports & Modules
+ - HTML5 APIs (Geolocation API,Web Storage,SSE)
+ - Internationalization (i18n) & Localization (l10n)
+   
 
 ## Networking - 
  - what is CDN ?
