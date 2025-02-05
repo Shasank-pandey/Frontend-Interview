@@ -139,7 +139,7 @@ Concepts to cover
  - CSP (Content Security Policy)
  - SameSite cookies
  - HTML Injection Risks
- - Advanced HTML Elements (<template> & <slot>,<dialog>,<details> & <summary>,)
+ - Advanced HTML Elements
  - Shadow DOM
  - HTML Imports & Modules
  - HTML5 APIs (Geolocation API,Web Storage,SSE)
