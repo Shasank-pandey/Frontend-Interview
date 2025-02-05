@@ -63,6 +63,16 @@ Implement Polyfills for below builtIn functions
  -  write function to memoize param and decide need to execute function or cached?
  -  Object.freeze and  Object.seal
 
+## Advanced Web developement
+ - Service worker and web worker
+ - Different type of rendering and their mechanism
+ - Different type of caching mechanism
+ - CORS mechanism
+ - Critical rendering path
+ - Re-flow and Re-pain
+ - BFF and its important
+ - real time data syncing (Long Polling and sockets)
+
 ## React App - Machine Coding
  - Todo Component with CRUD features 
  - Star Rating Component
