@@ -5,11 +5,14 @@ This works as a basic crash course for most of the interviews especially for <Pr
  - How react works internally? (https://react.dev/learn/queueing-a-series-of-state-updates)
  - Important Hooks -  useState |  useEffect | useRef | useReducers | useCallback | useMemo
  - React.Memo
+ - React life cycle methods ?
  - How can we achieve class based componens Life cycle methods in Functional based React Components.
  - React Router, React Router Dom
  - React fiber
+ - HOC
  - React batching
- - Virtual DOM
+ - Difference between react version releases - Pros and cons
+ - Virtual DOM and reconciliation
  - Diffing algo
  - Reconsilation
 
