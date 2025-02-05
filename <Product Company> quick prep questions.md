@@ -119,5 +119,6 @@ Concepts to cover
  - browser storage ? their usecase?
  - web worker and service worker ?
  - different Caching mechanism?
+ - What are different type of attacks explain and also explain what are the preventive solutions for them?
 
 
