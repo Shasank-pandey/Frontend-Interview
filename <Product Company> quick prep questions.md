@@ -30,6 +30,7 @@ Implement below Custom Hooks
 
 ## Core JS
 Go through below Topics
+ - Strict vs non-strict
  - this
  - let, var and const
  - closure
