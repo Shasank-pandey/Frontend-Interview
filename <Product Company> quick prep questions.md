@@ -20,6 +20,7 @@ This works as a basic crash course for most of the interviews especially for <Pr
 Implement below Custom Hooks
  - useLocalStorage
  - useDebounce
+ - useScroll
  - useThrottle
  - useToggle
  - usePrevious
@@ -37,12 +38,14 @@ Go through below Topics
  - hoisting
  - call, apply and bind
  - Promise
+ - Promise chaining (task manager)
  - Arrow Function
  - Event Loop
  - Async / Await
  - setTimeout / setTimeInterval
  - Prototype and its inheritance
  - Callback
+ - generator function and iterator
  - Practice  Questions for better JS Implementation
     - Call Promise one by one
     - Promise Batching
@@ -56,6 +59,7 @@ Implement Polyfills for below builtIn functions
  - Promise.allsettle
  - Promise.race
  - useState
+ - redux
  - useEffect
  - useMemo
  - Function.bind
@@ -64,8 +68,9 @@ Implement Polyfills for below builtIn functions
  - Throttle
  - customSetInterval (stop, resume, pause)
  - Polyfill for **new** keyword in JS
- -  write function to memoize param and decide need to execute function or cached?
- -  Object.freeze and  Object.seal
+ - write function to memoize param and decide need to execute function or cached?
+ - Object.freeze and  Object.seal
+ - lodash deepclone() an get()
 
 ## Advanced Web developement
  - Service worker and web worker
@@ -85,9 +90,12 @@ Implement Polyfills for below builtIn functions
  - Simple Drag and Drop Interface
  - Light / Dark Theme
  - OTP Input Component
- - Nested File System
+ - Nested File System / google drive
  - Tic Tac Toe (rare)
  - React Virtulization
+ - nested bookmarks
+ - nested checkbox
+
 
 ## Redux 
  - Explain **Redux** End-to-End.
