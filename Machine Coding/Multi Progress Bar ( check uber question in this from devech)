@@ -3,39 +3,57 @@ import './style.css';
 
 export default function App() {
   const [stack, setStack] = useState([]);
-  const handleCLick = () => {
-    setStack([...stack, stack[stack.length - 1] + 1]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleClick = () => {
+    setStack([...stack, stack.length]); // Ensure unique indices
   };
 
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-      <button onClick={handleCLick}>add</button>
+      <h1>Sequential Progress Bars</h1>
+      <button onClick={handleClick}>Add</button>
       <div style={{ display: 'flex', gap: '10px', flexDirection: 'column' }}>
-        {stack?.map((el) => (
-          <Loader />
+        {stack.map((_, idx) => (
+          <Loader
+            key={idx}
+            index={idx}
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+          />
         ))}
       </div>
     </div>
   );
 }
 
-const Loader = () => {
-  const [len, setLen] = useState(1);
+const Loader = ({ index, currentIndex, setCurrentIndex }) => {
+  const [len, setLen] = useState(0);
+
   useEffect(() => {
-    setInterval(() => {
-      setLen((prev) => prev + 1);
-    }, 10);
-  }, []);
+    if (index < currentIndex + 3) { // Allow up to 3 concurrent bars
+      const interval = setInterval(() => {
+        setLen((prev) => prev + 1);
+      }, 20); // 100 steps in 2000ms
+  
+      return () => clearInterval(interval); // Cleanup interval on unmount
+    }
+  }, [index, currentIndex]);
+  
+  useEffect(() => {
+    if (len >= 100) {
+      setCurrentIndex((prev) => Math.max(prev, index + 1)); // Fix: Avoids delay in filling new bars
+    }
+  }, [len, index]);
+
   return (
     <div style={{ width: '100%', background: 'grey' }}>
       <div
         style={{
           background: 'red',
           height: '20px',
-          width: `${len}px`,
-          maxWidth: '100%',
+          width: `${len}%`, // Use percentage for smoother animation
+          transition: 'width 0.02s linear',
         }}
       ></div>
     </div>
