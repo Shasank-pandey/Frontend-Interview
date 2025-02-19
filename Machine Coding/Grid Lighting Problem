@@ -1,1 +1,66 @@
 
+import React, { useState } from 'react';
+import './style.css';
+
+const initialGrid = [
+  [true, true, true],
+  [true, '', true],
+  [true, true, true],
+];
+
+export default function App() {
+  const [gridState, setGridState] = useState(initialGrid);
+  const [queue, setQueue] = useState([]);
+
+  const restart = () => {
+    let count = queue.length - 1;
+    const gridCopy = gridState.map(row => [...row]); // ✅ Deep copy to avoid mutation
+
+    const interval = setInterval(() => {
+      if (count < 0) {
+        clearInterval(interval); // ✅ Stop when finished
+        return;
+      }
+      const { row, col } = queue[count];
+      gridCopy[row][col] = true;
+      setGridState([...gridCopy]);
+      count--;
+    }, 500);
+  };
+
+  const handleClick = (row, col) => {
+    if (gridState[row][col] === false) return; // Prevent re-clicking ✅
+
+    setQueue([...queue, { row, col }]);
+
+    const gridCopy = gridState.map(row => [...row]);
+    gridCopy[row][col] = false;
+    setGridState([...gridCopy]);
+
+    // ✅ Restart when all valid positions are toggled
+    const toggledCells = gridCopy.flat().filter(cell => cell === false).length;
+    if (toggledCells === 3 * 3 - 1) {
+      restart();
+    }
+  };
+
+  return (
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "5px" }}>
+      {gridState.map((row, idx1) =>
+        row.map((col, idx2) => (
+          <div
+            key={`${idx1}-${idx2}`}
+            style={{
+              width: "50px",
+              height: "50px",
+              border: "1px solid grey",
+              background: col === '' ? "white" : col ? "yellow" : "green",
+              cursor: col === '' ? "default" : "pointer"
+            }}
+            onClick={() => col !== '' && handleClick(idx1, idx2)}
+          ></div>
+        ))
+      )}
+    </div>
+  );
+}
