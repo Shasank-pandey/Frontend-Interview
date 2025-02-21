@@ -1,12 +1,12 @@
 # Currying – write function to find sum , Sum(1,2,3)(1,2)(3) – when there is blank param return.
 
+# given a HTML in string format, find innertext of a div by id.
+
 # write a function  deepCopy to clone nested array/object and return new array/object.
 
 # For an array of asynchronous functions, each of them returning a promise, write code to execute all the functions in the array serially
 
 # Write code to execute all the functions in the array serially such that f2 runs only after f1 completes, f3 runs only after f2 completes, and so on.
-
-# Important POLLYFILL (map,reduce,filter,bind,Promise.All,Promise)
 
 # You have sub-rotated sorted array. Write ur custom binary search logic.
 
