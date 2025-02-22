@@ -70,7 +70,8 @@ Implement Polyfills for below builtIn functions
  - Polyfill for **new** keyword in JS
  - write function to memoize param and decide need to execute function or cached?
  - Object.freeze and  Object.seal
- - lodash deepclone() an get()
+ - lodash deepclone() and get()
+ - lodash isEqual()
 
 ## Advanced Web developement
  - Service worker and web worker
