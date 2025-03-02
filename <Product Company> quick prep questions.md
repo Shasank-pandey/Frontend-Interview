@@ -15,6 +15,7 @@ This works as a basic crash course for most of the interviews especially for <Pr
  - Virtual DOM and reconciliation
  - Diffing algo
  - Reconsilation
+ - Difference between React Fiber and Reconsilation.
 
 ## Custom Hooks
 Implement below Custom Hooks
