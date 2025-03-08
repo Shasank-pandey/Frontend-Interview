@@ -85,6 +85,7 @@ Implement Polyfills for below builtIn functions
  - Re-flow and Re-pain
  - BFF and its important
  - real time data syncing (Long Polling and sockets)
+ - explain CSP
 
 ## React App - Machine Coding
  - Todo Component with CRUD features 
