@@ -124,6 +124,27 @@ Concepts to cover
     - Easy & Medium level [Top Interview Q|ans](https://leetcode.com/studyplan/top-interview-150/)
     - Easy & Medium level [<Product Company> labs specific Q|ans](https://leetcode.com/company/walmart-labs/?favoriteSlug=walmart-labs-thirty-days) [first do 3 months. then 6 months and so on]
   
+## Important WEB APIS - 
+ - DOMParser()
+ - requestanimationframe
+ - setTimeout , setInterval
+ - XMLHttpRequest
+ - MutationObserver
+ - IntersectionObserver
+ - ResizeObserver
+ - document.createDocumentFragment()
+ - requestAnimationFrame
+ - Performance API
+ - IdleCallback (requestIdleCallback())
+ - fetch()
+ - WebSockets
+ - EventSource (Server-Sent Events)
+ - IndexedDB
+ - Service Workers
+ - Clipboard API
+ - Web Workers
+ - Crypto API
+  
 ## CSS -
  - Box Model
  - CSS flex Box
