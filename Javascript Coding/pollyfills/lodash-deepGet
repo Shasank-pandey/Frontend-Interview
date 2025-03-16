@@ -1,0 +1,34 @@
+
+function deepGet(obj,path,defualt){
+    if(obj === null || typeof obj !== 'object') return obj
+    
+    let key = Array.isArray(path) ? path : path.split(".")
+    
+    let result = obj
+    
+    for(let item of key){
+        if(obj && typeof result === 'object' && result.hasOwnProperty(item)){
+            result=result[item]
+        } else {
+            return defualt
+        }
+    }
+    return result
+}
+
+
+const data = {
+    user: {
+        profile: {
+            name: "John Doe",
+            address: {
+                city: "New York",
+            },
+        },
+    },
+};
+
+console.log(deepGet(data, "user.profile.name")); // ✅ "John Doe"
+console.log(deepGet(data, "user.profile.age", 30)); // ✅ 30 (default value)
+console.log(deepGet(data, ["user", "profile", "address", "city"])); // ✅ "New York"
+console.log(deepGet(data, "user.contact.phone", "Not Available")); // ✅ "Not Available"
