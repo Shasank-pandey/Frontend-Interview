@@ -1,0 +1,28 @@
+
+
+function isDeepEqual(data1,data2){
+    //check primitive
+    if (data1 === data2) return true; 
+    //check null and type missmatch
+    if(data1 === null || data2 === null || typeof data1 !== 'object' ||  typeof data2 !== 'object') return false
+    //nested array check
+    if (Array.isArray(data1) && Array.isArray(data2)){
+        if(data1.length !== data2.length) return false
+        return data1.every((item,idx)=>isDeepEqual(item,data2[idx]))
+    }
+    //nested object check
+    const objkey1 = Object.keys(data1)
+    const objkey2 = Object.keys(data2)
+    if(objkey1.length !== objkey2.length) return false
+    return objkey1.every((item,idx)=>isDeepEqual(data1[item],data2[item]))
+}
+
+
+
+console.log(isDeepEqual({ a: 1, b: { c: 2 } }, { a: 1, b: { c: 2 } })); // true
+console.log(isDeepEqual([1, 2, { a: 3 }], [1, 2, { a: 3 }])); // true
+console.log(isDeepEqual({ a: 1, b: 2 }, { a: 1, b: 3 })); // false
+console.log(isDeepEqual(new Date(2023, 5, 10), new Date(2023, 5, 10))); // true
+console.log(isDeepEqual(new Set([1, 2, 3]), new Set([1, 2, 3]))); // true
+console.log(isDeepEqual(new Map([[1, 'a']]), new Map([[1, 'a']]))); // true
+console.log(isDeepEqual(null, undefined)); // false
