@@ -86,6 +86,11 @@ Implement Polyfills for below builtIn functions
  - BFF and its important
  - real time data syncing (Long Polling and sockets)
  - explain CSP
+ - Explain all features of webpack - setup, process
+ - WEBPACK - how to build and publish UI componenet as package (explain and code setup)
+ - React specific - explain -> package.json, pakcage-lock.json, babel.config, jest.config
+ - GIT - how to change default branch from main to master, all basic git commands
+ - JEST - deep level knowledge, how jest work, setup
 
 ## React App - Machine Coding
  - Todo Component with CRUD features 
