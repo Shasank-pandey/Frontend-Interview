@@ -1,1 +1,56 @@
+class MessageBus {
+    constructor() {
+        this.topics = new Map(); // Store topics and their subscribers
+    }
 
+    subscribe(topic, callback) {
+        if (!this.topics.has(topic)) {
+            this.topics.set(topic, []);
+        }
+        this.topics.get(topic).push(callback);
+    }
+
+    publish(topic, message) {
+        if (this.topics.has(topic)) {
+            this.topics.get(topic).forEach(callback => callback(message));
+        }
+    }
+}
+
+
+// Producer Class
+class Producer {
+    constructor(bus) {
+        this.bus = bus;
+    }
+
+    send(topic, message) {
+        console.log(`Producing message on ${topic}:`, message);
+        this.bus.publish(topic, message);
+    }
+}
+
+
+// Consumer Class
+class Consumer {
+    constructor(bus) {
+        this.bus = bus;
+    }
+
+    subscribe(topic, callback) {
+        this.bus.subscribe(topic, callback);
+    }
+}
+
+// Usage
+const bus = new MessageBus();
+const producer = new Producer(bus);
+const consumer = new Consumer(bus);
+
+// Consumer subscribes to a topic
+consumer.subscribe('chat', (msg) => {
+    console.log("Received message:", msg);
+});
+
+// Producer sends a message
+producer.send('chat', { message: "hi" });
