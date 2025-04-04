@@ -360,3 +360,68 @@ const timer2 = setTimeout(() => {
   console.log('t3')
 }, 0)
 console.log('end')
+
+
+
+
+// Question: 15
+ console.log(1);
+setTimeout(() => {
+  console.log(2);
+}, 0);
+Promise.resolve(3).then(res => {
+    console.log(res);
+    setTimeout(() => {
+      console.log(7);
+    }, 100);
+ 
+    setTimeout(() => {
+      console.log(8);
+    }, 0);
+});
+setTimeout(() => {
+  console.log(4);
+}, 100);
+setTimeout(() => {
+  console.log(9);
+}, 0);
+ 
+setTimeout(() => {
+  console.log(5);
+}, -100);
+ 
+console.log(6);
+
+
+
+
+// Question: 16
+console.log(1);
+
+setTimeout(() => {
+  console.log(2);
+}, 0); // Macro task
+
+Promise.resolve(3).then(res => {
+  console.log(res); // Microtask
+  setTimeout(() => {
+    console.log(7);
+  }, 100); // Macro task
+});
+
+async function asyncFunction() {
+  console.log(4); 
+  const res = await Promise.resolve(5);
+  console.log(res);
+  setTimeout(() => {
+    console.log(8);
+  }, 0);
+}
+
+asyncFunction();
+
+setTimeout(() => {
+  console.log(6);
+}, 0); // Macro task
+
+console.log(9);
