@@ -3,64 +3,57 @@
 ---
 
 ### 1. Promise Batch Execution  
-Write a function that takes an array of promise-returning functions and a batch size `n`, and executes `n` promises at a time. Once the current batch completes, the next batch should begin.
+Execute an array of promise-returning functions in fixed-size batches. Wait for each batch to finish before starting the next.
 
 ---
 
-### 2. Promise Pool (Concurrency Control)  
-Create a function that accepts an array of promise-returning functions and a pool size `k`. At most `k` promises should run concurrently. As soon as any promise resolves, the next one should start, maintaining the pool size.
+### 2. Promise Pool (Max Concurrent Promises)  
+Run only `n` promises at a time from an array of promise-returning functions. As soon as one finishes, start the next—ensuring concurrency limit is maintained.
 
 ---
 
 ### 3. Promise with Retry and Delay  
-Write a utility function that retries a failed promise-based function `n` times with a configurable delay between each retry.
+Implement a retry mechanism for a promise-returning function with configurable retries and delay between each retry attempt.
 
 ---
 
-### 4. Polyfill for Promise Methods  
-Implement the following polyfills for native JavaScript Promise methods:
-- `Promise.all`
-- `Promise.race`
-- `Promise.any`
+### 4. Polyfills for Promise Methods  
+Write polyfills for native JavaScript Promise methods:  
+- `Promise.all`  
+- `Promise.race`  
+- `Promise.any`  
 - `Promise.allSettled`
 
 ---
 
 ### 5. Polyfill for the `new` Keyword  
-Write a function that replicates the behavior of the JavaScript `new` keyword.  
-Example:
-```js
-function MyNew(ConstructorFn, ...args) {
-  // implement custom 'new'
-}
-```
+Replicate the behavior of JavaScript’s `new` keyword with a custom function.
 
 ---
 
-### 6. Promise Result Caching
-Write a function that wraps a promise-returning API call and caches its result for a specified duration. During this time, any call to the function should return the cached result without calling the API again.
-
-
----
-
-### 7. Custom setInterval Implementation
-Recreate your own version of setInterval using setTimeout, ensuring the behavior mimics native setInterval.
+### 6. Promise Result Caching with Expiry  
+Wrap an API function so its result is cached and reused for a certain period. Within that time, repeated calls return cached data.
 
 ---
 
-### 8. Implement Redux from Scratch
-Create a simplified version of Redux that includes:
-
--createStore
--dispatch
--getState
--subscribe
+### 7. Custom `setInterval` Implementation  
+Recreate the functionality of `setInterval` using `setTimeout`.
 
 ---
 
-### 9. Event Bus (Pub-Sub System)
-Design and implement an event bus system that allows:
+### 8. Build Your Own Redux  
+Implement a simplified version of Redux including:  
+- `createStore`  
+- `dispatch`  
+- `getState`  
+- `subscribe`
 
--Subscribing to events with callback handlers
--Publishing events to notify subscribers
--Unsubscribing from events
+---
+
+### 9. Event Bus (Publisher-Subscriber Pattern)  
+Create an event bus system supporting:  
+- Event subscription  
+- Event emission (publish)  
+- Event unsubscription
+
+---
