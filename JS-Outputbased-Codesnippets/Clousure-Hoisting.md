@@ -15,6 +15,8 @@ setTimeout(function() {
 
 var a = 3;
 
+
+
 // Question 2
 function createCounters() {
   var counters = [];
@@ -32,6 +34,9 @@ var counters = createCounters();
 counters[0]();  // ?
 counters[1]();  // ?
 counters[2]();  // ?
+
+
+
 
 // Question 3
 function outer() {
@@ -52,6 +57,9 @@ counter2();  // ?
 counter1();  // ?
 counter2();  // ?
 
+
+
+
 // Question 4
 console.log(x);
 
@@ -66,6 +74,9 @@ test();
 
 console.log(z);
 let z = 15;
+
+
+
 
 // Question 5
 var x = 10;
@@ -89,6 +100,9 @@ function test() {
 test();
 
 console.log(x);
+
+
+
 
 // Question 6
 var x = 10;
@@ -115,6 +129,9 @@ outer();
 
 console.log(x);
 
+
+
+
 // Question 7
 var x = 1;
 
@@ -132,6 +149,9 @@ function test() {
 test();
 
 console.log(x);  // What will this log?
+
+
+
 
 // Question 8
 function outer() {
@@ -151,6 +171,10 @@ var closure1 = outer();
 var closure2 = closure1(); 
 closure2();  // What will this log?
 
+
+
+
+
 // Question 9
 function counter() {
   var count = 0;
@@ -169,6 +193,9 @@ var incrementer = counter();  // First call to counter
 var decrementer = incrementer();  // First call to increment
 decrementer();  // Call to decrement
 incrementer();  // Call to increment again
+
+
+
 
 // Question 10
 function outer() {
