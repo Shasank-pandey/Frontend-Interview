@@ -118,3 +118,27 @@ const obj1 = { a: 123 };
 memoizedSum(obj1, 2, 3); // Executed
 memoizedSum(obj1, 2, 3); // Cached
 memoizedSum({ a: 123 }, 2, 3); // Executed (new reference)
+
+---
+
+### 23. Transform (flatten) an object into a single-level object with keys using underscores.
+Input:
+const objInput = {
+  name: {
+    inner1: "shasank",
+    inner2: {
+      test: 34
+    }
+  },
+  child: {
+    city: "bangalore"
+  },
+  age: 24
+}
+Output:
+{
+  name_inner1: "shasank",
+  name_inner2_test: 34,
+  child_city: "bangalore",
+  age: 24
+}
