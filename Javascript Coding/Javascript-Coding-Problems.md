@@ -128,6 +128,8 @@ Example: `sum(2)(3)(5)`
 ---
 
 ### 23. Transform (flatten) an object into a single-level object with keys using underscores.
+```js
+
 Input:
 const objInput = {
   name: {
@@ -148,3 +150,4 @@ Output:
   child_city: "bangalore",
   age: 24
 }
+```
