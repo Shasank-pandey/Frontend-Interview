@@ -124,6 +124,8 @@ memoizedSum({ a: 123 }, 2, 3); // Executed (new reference)
 ### 20. Write a currying function `sum`  
 Example: `sum(2)(3)(5)`
 
+---
+
 ### 23. Transform (flatten) an object into a single-level object with keys using underscores.
 Input:
 const objInput = {
