@@ -118,6 +118,7 @@ const obj1 = { a: 123 };
 memoizedSum(obj1, 2, 3); // Executed
 memoizedSum(obj1, 2, 3); // Cached
 memoizedSum({ a: 123 }, 2, 3); // Executed (new reference)
+```
 
 ---
 
