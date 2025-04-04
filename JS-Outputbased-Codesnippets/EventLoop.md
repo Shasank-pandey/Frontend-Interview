@@ -1,6 +1,7 @@
 
-1.
 ```js
+// Question: 1
+
 function A() {
   this.value = 1;
   
@@ -18,7 +19,8 @@ function A() {
 var obj = new A();
 
 
-2.
+
+// Question: 2
 console.log('Start');
 
 setTimeout(() => {
@@ -44,7 +46,8 @@ setInterval(() => {
 console.log('End');
 
 
-3.
+
+// Question: 3
 console.log("Start");
 
 setTimeout(function() {
@@ -65,7 +68,7 @@ console.log("End");
 
 
 
-4.
+// Question: 4
 console.log("Start");
 
 setTimeout(function() {
@@ -95,7 +98,9 @@ Promise.resolve().then(function() {
 console.log("End");
 
 
-5.
+
+
+// Question: 5
 console.log("Start");
 
 async function async1() {
@@ -130,7 +135,8 @@ new Promise(resolve => {
 console.log("End");
 
 
-6.
+
+// Question: 6
 
 console.log("Start");
 
@@ -155,7 +161,9 @@ Promise.resolve().then(() => console.log("Promise 2"));
 console.log("End");
 
 
-7.
+
+
+// Question: 7
 
 console.log("Start");
 
@@ -187,7 +195,7 @@ console.log("End");
 
 
 
-8.
+// Question: 8
 console.log("Start");
 
 async function asyncFunc() {
@@ -208,7 +216,8 @@ asyncFunc();
 console.log("End");
 
 
-9.
+
+// Question: 9
 console.log("Start");
 
 async function asyncFunc() {
@@ -236,7 +245,8 @@ asyncFunc();
 console.log("End");
 
 
-10.
+
+// Question: 10
 console.log("Start");
 
 async function asyncFunc() {
@@ -258,7 +268,7 @@ console.log("End");
 
 
 
-11.
+// Question: 11
 1. console.log(1);
 setTimeout(() => {
   console.log(2);
@@ -290,7 +300,7 @@ console.log(6);
 
 
 
-12. 
+// Question: 12 
 console.log(1);
 setTimeout(() => {
   console.log(2);
@@ -322,7 +332,7 @@ console.log(9);
 
 
 
-13.
+// Question: 13
 function Person(firstName, lastName) {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -334,7 +344,8 @@ Person.getFullName = function() {
 console.log(member.getFullName());
 
 
-14. 
+
+// Question: 14 
 console.log('start')
 const timer1 = setTimeout(() => {
   console.log('t1');
