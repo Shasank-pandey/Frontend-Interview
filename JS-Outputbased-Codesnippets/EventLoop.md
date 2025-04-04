@@ -1,5 +1,6 @@
 
 1.
+```js
 function A() {
   this.value = 1;
   
@@ -303,7 +304,7 @@ Promise.resolve(3).then(res => {
 });
 
 async function asyncFunction() {
-  console.log(4); // Synchronous within async function
+  console.log(4);
   const res = await Promise.resolve(5);
   console.log(res); // Microtask, after await
   setTimeout(() => {
