@@ -325,19 +325,12 @@ console.log(9);
 function Person(firstName, lastName) {
   this.firstName = firstName;
   this.lastName = lastName;
-
 }
-
 const member = new Person('Bruce', 'Wayne');
-
 Person.getFullName = function() {
   return `${this.firstName} ${this.lastName}`;
 };
-
-console.log(member.getFullName()); // Output
-
-const member2 = new Person('Arista', 'Network');
-console.log(member2.getFullName());
+console.log(member.getFullName());
 
 
 14. 
