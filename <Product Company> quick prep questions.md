@@ -165,6 +165,7 @@ Concepts to cover
  - CSS Variables & Custom Properties (var(--custom-variable),Theming with CSS Variables)
  - Performance & Rendering Optimization (CSS Paint & Composite Stages,Will-Change Propert,Critical CSS & Render Blocking CSS)
  - Advanced Layout & Responsiveness (CSS Container Queries,Subgrid in CSS Grid,CSS Scroll Snap,Aspect Ratio )
+ - translate and transform
 
 ## HTML - 
  - SEO
