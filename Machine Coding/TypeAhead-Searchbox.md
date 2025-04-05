@@ -1,4 +1,6 @@
 ```js
+/****/VANILLA JS VERSION/****/
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,8 +98,8 @@ function searchBuddy(){
 
 
 
-```js
-// REACT VERSION :
+
+/****/REACT VERSION/****/
 
 import React, { useState, useEffect } from 'react';
 
