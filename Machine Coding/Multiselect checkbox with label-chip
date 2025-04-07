@@ -1,1 +1,167 @@
 
+import React, { useState, useEffect } from 'react';
+
+const tree = [
+  {
+    id: 1,
+    label: 'Parent 1',
+    children: [
+      {
+        id: 2,
+        label: 'Child 1.1',
+        children: [
+          { id: 4, label: 'Grandchild 1.1.1' },
+          { id: 5, label: 'Grandchild 1.1.2' }
+        ]
+      },
+      {
+        id: 3,
+        label: 'Child 1.2',
+        children: [
+          { id: 6, label: 'Grandchild 1.2.1' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 10,
+    label: 'Parent 2',
+    children: [
+      {
+        id: 11,
+        label: 'Child 2.1',
+        children: [
+          { id: 12, label: 'Grandchild 2.1.1' },
+          { id: 13, label: 'Grandchild 2.1.2' }
+        ]
+      }
+    ]
+  }
+];
+
+
+const App = () => {
+ const [parentMap,setParentMap] = useState({})
+ const [stateTree,setTree] = useState([])
+const createParentMap = (data, res = {}, parentId = null) => {
+  data.forEach(el => {
+    if (parentId !== null) {
+      res[el.id] = parentId;
+    }
+    if (el.children) {
+      createParentMap(el.children, res, el.id);
+    }
+  });
+  return res;
+};
+
+  const addFlag=(data)=>{
+    data.forEach(el=>{
+      el.checked = false
+      if(el.children){
+        addFlag(el.children)
+      }
+    })
+    return data
+  }
+  
+  useEffect(()=>{
+    const parentMap = createParentMap(tree);
+    setParentMap(parentMap)
+    setTree(addFlag(tree))
+  },[])
+
+ const updateChild = (value, node) => {
+  node.checked = value;
+  if (node.children) {
+    node.children.forEach(child => updateChild(value, child));
+  }
+};
+
+const getSiblingStatus=(childrens)=>{
+  let status = true
+  for(let item of childrens){
+    status  = status && item.checked
+  }
+  return status
+}
+
+
+const findByNode = (tree, id) => {
+  for (const item of tree) {
+    if (item.id === id) {
+      return item;
+    }
+    if (item.children) {
+      const found = findByNode(item.children, id);
+      if (found) return found;
+    }
+  }
+  return null;
+};
+
+  const updateParent = (data, id) => {
+  const parentId = parentMap[id];
+  if (!parentId) return;
+
+  const parentNode = findByNode(data, parentId);
+  if (!parentNode || !parentNode.children) return;
+
+  const status = getSiblingStatus(parentNode.children);
+  parentNode.checked = status;
+
+  // Recursively go up
+  updateParent(data, parentId);
+};
+  
+ const handleCheck = (e, node) => {
+  const value = e.target.checked;
+
+  const clonedTree = JSON.parse(JSON.stringify(stateTree)); // deep clone
+  const target = findByNode(clonedTree, node.id);
+  
+  if (target) {
+    updateChild(value, target);
+    updateParent(clonedTree,node.id)
+    console.log("clonedTree",clonedTree)
+    setTree(clonedTree);
+  }
+};
+
+
+  const RenderTree=(data)=>{
+    return(
+      <>
+        {
+          data.map(el=>{
+            return (
+            <>
+              {console.log(el.checked)}
+              <input checked={el.checked} onChange={(e)=>handleCheck(e,el)} type='checkbox'/><div>{el.label}
+              <div style={{marginLeft:"25px"}}>{el.children ? RenderTree(el.children) : null}</div>
+              </div>
+            </>
+            )
+          })
+        }
+      </>
+    )
+  }
+  
+
+ return (<>
+   {
+     RenderTree(stateTree)
+   }
+   </>)
+};
+
+export default App;
+
+
+
+
+
+
+
+
