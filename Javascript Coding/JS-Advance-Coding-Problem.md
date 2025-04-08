@@ -34,6 +34,59 @@ Replicate the behavior of JavaScript’s `new` keyword with a custom function.
 ### 6. Promise Result Caching with Expiry  
 Wrap an API function so its result is cached and reused for a certain period. Within that time, repeated calls return cached data.
 
+```js
+function CachedApi(apicall,ttl){
+    let cached = {}
+    return function(...args){
+        const now = Date.now()
+        const key = JSON.stringify(args);
+        if(cached[key]){
+             const { time, promise, value } = cached[key];
+             console.log("from cache")
+            if(promise){
+                return promise
+            }
+            if(now - time <= ttl*1000){
+                return Promise.resolve(value)
+            }
+        }
+           console.log("from api")
+           const prom = apicall().then(response=>{
+                cached[key] = {
+                    promise: null,
+                    time : Date.now() ,
+                    value : response
+                 }
+                return response
+            })
+            cached[key] = {
+                promise: prom,
+                time : Date.now() ,
+                value : null
+            }
+            return prom
+        }
+}
+
+function apicall(){
+    return new Promise(res=>{
+        setTimeout(res("hey bro"),3000)
+    })
+}
+
+const CachedApiInstance = CachedApi(apicall,3)
+
+// 🔁 These three are called at (almost) the same time, only one API should trigger
+CachedApiInstance(1, 2).then((res) => console.log("1️⃣", res));
+CachedApiInstance(1, 2).then((res) => console.log("2️⃣", res));
+CachedApiInstance(1, 2).then((res) => console.log("3️⃣", res));
+
+// ⏱️ Later call with same args after 4 seconds (within TTL)
+setTimeout(() => {
+  CachedApiInstance(1, 2).then((res) => console.log("4️⃣ from cached (within TTL)", res));
+}, 4000);
+```
+
 ---
 
 ### 7. Custom `setInterval` Implementation  
