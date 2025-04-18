@@ -195,5 +195,6 @@ Concepts to cover
  - web worker and service worker ?
  - different Caching mechanism?
  - What are different type of attacks explain and also explain what are the preventive solutions for them?
+ - how to stop google crawling my site ?
 
 
