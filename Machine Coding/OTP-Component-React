@@ -1,4 +1,4 @@
-```
+```js
 
 import React, { useRef, useState } from 'react';
 import './style.css';
@@ -70,5 +70,3 @@ const App = () => {
 export default App;
 
 
-
-```
