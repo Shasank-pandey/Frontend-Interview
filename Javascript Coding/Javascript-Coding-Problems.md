@@ -49,13 +49,13 @@ Example:
         sum = seq % 2 ===0 ? sum+args[0] : sum-args[0]
         seq++
         return inner
-    }
-}
+     }
+   }
 
-console.log( curry(1)(2)(3)() ); // 2
-console.log( curry(1)(2)() ); // -1
-console.log( curry(1)(2)(3)(4)() ); // -2
-  ```
+ console.log( curry(1)(2)(3)() ); // 2
+ console.log( curry(1)(2)() ); // -1
+ console.log( curry(1)(2)(3)(4)() ); // -2
+```
 
 ---
 
