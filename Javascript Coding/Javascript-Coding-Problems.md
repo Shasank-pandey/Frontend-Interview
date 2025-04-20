@@ -52,9 +52,9 @@ Example:
      }
    }
 
- console.log( curry(1)(2)(3)() ); // 2
- console.log( curry(1)(2)() ); // -1
- console.log( curry(1)(2)(3)(4)() ); // -2
+ //console.log( curry(1)(2)(3)() ); // 2
+ //console.log( curry(1)(2)() ); // -1
+ //console.log( curry(1)(2)(3)(4)() ); // -2
 ```
 
 ---
