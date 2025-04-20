@@ -37,6 +37,26 @@ Example:
 - `plusMinus(2)(3)(4)() // return 2 + 3 - 4 = 1`  
 - `plusMinus(2)(3)(4)(5)(6)() // return 2 + 3 - 4 + 5 - 6 = 0`
 
+  SOLUTION:
+  ```js
+  function curry(val){
+    let sum = val
+    let seq = 1
+    return function inner(...args){
+        if(args.length===0){
+            return sum
+        }
+        sum = seq % 2 ===0 ? sum+args[0] : sum-args[0]
+        seq++
+        return inner
+    }
+}
+
+console.log( curry(1)(2)(3)() ); // 2
+console.log( curry(1)(2)() ); // -1
+console.log( curry(1)(2)(3)(4)() ); // -2
+  ```
+
 ---
 
 ### 9. Write a recursive function to flatten a nested array  
