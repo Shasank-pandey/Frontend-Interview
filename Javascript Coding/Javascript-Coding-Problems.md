@@ -37,10 +37,8 @@ Example:
 - `plusMinus(2)(3)(4)() // return 2 + 3 - 4 = 1`  
 - `plusMinus(2)(3)(4)(5)(6)() // return 2 + 3 - 4 + 5 - 6 = 0`
 
-  
-  ```js
-  
-  function curry(val){
+```js
+function curry(val){
     let sum = val
     let seq = 1
     return function inner(...args){
@@ -51,8 +49,7 @@ Example:
         seq++
         return inner
      }
-   }
- 
+}
 ```
 
 ---
