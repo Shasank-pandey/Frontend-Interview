@@ -1,21 +1,27 @@
 
 
-function isDeepEqual(data1,data2){
-    //check primitive
-    if (data1 === data2) return true; 
-    //check null and type missmatch
-    if(data1 === null || data2 === null || typeof data1 !== 'object' ||  typeof data2 !== 'object') return false
-    //nested array check
-    if (Array.isArray(data1) && Array.isArray(data2)){
-        if(data1.length !== data2.length) return false
-        return data1.every((item,idx)=>isDeepEqual(item,data2[idx]))
+var isDeepEqual = function(o1, o2) {
+    if (o1 === o2) return true;
+    if (o1 === null || o2 === null) return false;
+    if (typeof o1 !== "object" || typeof o2 !== "object") return false;
+
+    const isArray1 = Array.isArray(o1);
+    const isArray2 = Array.isArray(o2);
+
+    if (isArray1 !== isArray2) return false;
+
+    if (isArray1 && isArray2) {
+        if (o1.length !== o2.length) return false;
+        return o1.every((el, idx) => isDeepEqual(el, o2[idx]));
     }
-    //nested object check
-    const objkey1 = Object.keys(data1)
-    const objkey2 = Object.keys(data2)
-    if(objkey1.length !== objkey2.length) return false
-    return objkey1.every((item,idx)=>isDeepEqual(data1[item],data2[item]))
-}
+
+    const keys1 = Object.keys(o1);
+    const keys2 = Object.keys(o2);
+
+    if (keys1.length !== keys2.length) return false;
+
+    return keys1.every(key => isDeepEqual(o1[key], o2[key]));
+};
 
 
 
