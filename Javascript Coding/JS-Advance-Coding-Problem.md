@@ -2,7 +2,7 @@
 
 ---
 
-### 0.1 Promise Batch Execution  
+### 0.1 Promise All in one (max concurrency, retry, multiple priority Queue)
 Promise - Multiple Task runner on priority, retry mechanism and max concurrency
 
 ```js
