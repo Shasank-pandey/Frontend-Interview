@@ -2,6 +2,101 @@
 
 ---
 
+### 0.1 Promise Batch Execution  
+Promise - Multiple Task runner on priority, retry mechanism and max concurrency
+
+```js
+
+function randomFailTask(name) {
+    return () =>
+        new Promise((resolve, reject) => {
+            const fail = Math.random() < 0.3;
+            setTimeout(() => {
+                if (fail) reject(`${name} failed`);
+                else resolve(`${name} done`);
+            }, Math.random() * 1000);
+        });
+}
+
+function retryWrapper(prom, retries) {
+    return new Promise((resolve, reject) => {
+        function retry(attempt) {
+            prom()
+                .then(resolve)
+                .catch(() => {
+                    if (attempt >= retries) {
+                        reject(`Failed after ${retries} retries`);
+                    } else {
+                        setTimeout(() => retry(attempt + 1), 2000);
+                    }
+                });
+        }
+        retry(0);
+    });
+}
+
+function runPriorityTasks(queues, limit, retries) {
+    let onGoing = 0;
+    let result = [];
+    let idx = 0;
+    const priorityEnum = ['high', 'medium', 'low'];
+
+    function getNextTask() {
+        for (let prio of priorityEnum) {
+            if (queues[prio].length > 0) {
+                const task = queues[prio].shift();
+                return { id: idx++, task, priority: prio };
+            }
+        }
+        return null;
+    }
+
+    return new Promise((res) => {
+        function execute() {
+            if (onGoing === 0 && priorityEnum.every(item => queues[item].length === 0)) {
+                res(result);
+                return;
+            }
+
+            while (onGoing < limit) {
+                const taskData = getNextTask();
+                if (!taskData) break;
+
+                const { id, task, priority } = taskData;
+                onGoing++;
+
+                retryWrapper(task, retries).then(msg => {
+                    result[id] = `[${priority.toUpperCase()}] ${msg}`;
+                    onGoing--;
+                    execute();
+                }).catch(err => {
+                    result[id] = `[${priority.toUpperCase()}] ${err}`;
+                    onGoing--;
+                    execute();
+                });
+            }
+        }
+
+        execute();
+    });
+}
+
+// Test:
+const queues = {
+    high: [randomFailTask('H1'), randomFailTask('H2')],
+    medium: [randomFailTask('M1'), randomFailTask('M2')],
+    low: [randomFailTask('L1'), randomFailTask('L2'), randomFailTask('L3')],
+};
+
+runPriorityTasks(queues, 3, 2).then(res => {
+    console.log('All done:\n', res);
+});
+
+
+```
+
+---
+
 ### 1. Promise Batch Execution  
 Execute an array of promise-returning functions in fixed-size batches. Wait for each batch to finish before starting the next.
 
