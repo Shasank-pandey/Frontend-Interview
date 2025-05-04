@@ -190,14 +190,10 @@ Recreate the functionality of `setInterval` using `setTimeout`.
 ---
 
 ### 8. Build Your Own Redux  
-Implement a simplified version of Redux including:  
-- `createStore`  
-- `dispatch`  
-- `getState`  
-- `subscribe`
+Implement a simplified version of Redux including: 
 
-  ```js
-  import React, { useState, useEffect } from 'react';
+```js
+import React, { useState, useEffect } from 'react';
 
 const reducer=(state,action)=>{
   switch(action.type){
@@ -257,8 +253,7 @@ function MyComponent() {
 }
 
 export default MyComponent;
-
-  ```
+```
 
 ---
 
