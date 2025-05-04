@@ -259,8 +259,41 @@ export default MyComponent;
 
 ### 9. Event Bus (Publisher-Subscriber Pattern)  
 Create an event bus system supporting:  
-- Event subscription  
-- Event emission (publish)  
-- Event unsubscription
+
+```js
+class PubSub {
+    constructor(){
+        this.subscribers = {}
+    }
+    
+      subscribe(event, cb) {
+      if (!this.subscribers[event]) {
+        this.subscribers[event] = [];
+      }
+      this.subscribers[event].push(cb);  // push regardless
+      }
+    
+    publish(event,data){
+        if(!this.subscribers[event]){
+           throw "Invalid Publish"
+        }
+        else {
+            this.subscribers[event].forEach(cb=>cb(data))
+        }
+    }
+    
+    unsubscribe(event,cb){
+        if(this.subscribers[event]){
+            this.subscribers[event] = this.subscribers[event].filter(fn=> fn !== cb)
+        }
+    }
+}
+
+const pub = new PubSub()
+
+pub.subscribe('fetch',(data)=>{console.log("data in subs",data)})
+pub.publish('fetch',{name:"shasank"})
+
+```
 
 ---
