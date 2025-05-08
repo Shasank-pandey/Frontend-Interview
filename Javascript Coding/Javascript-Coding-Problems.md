@@ -2,6 +2,81 @@
 
 ---
 
+### 0.1. You are given a application with:
+
+A Live Clock
+
+Displays the current time, updating every millisecond.
+A Prime Number Generator
+
+Takes an input N and, on button click, generates all prime numbers up to N.
+Current Issue:
+When entering a large number (e.g., 100,000), the UI freezes, causing the clock to stop updating until the computation is complete.
+
+Your Task:
+Refactor the implementation so that:
+
+The clock remains smooth and never freezes.
+The prime number computation runs without blocking the UI.
+Example: `Sum(1,2,3)(1,2)(3)` – When there is a blank param, return the result.
+
+```js
+
+function updateClock() {
+        const clockElement = document.getElementById('clock');
+        const now = new Date();
+        const timeString = `${now.toLocaleTimeString()}.${String(
+          now.getMilliseconds()
+        ).padStart(3, '0')}`;
+        clockElement.textContent = timeString;
+      }
+      setInterval(updateClock, 10);
+      updateClock(); // Initial call to display clock immediately
+
+      // Function to check if a number is prime
+      function isPrime(num) {
+        if (num <= 1) return false;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) return false;
+        }
+        return true;
+      }
+
+      // Function to find all prime numbers less than or equal to a given number
+      function findAllPrimes(limit) {
+        const primes = [];
+        for (let i = 2; i <= limit; i++) {
+          if (isPrime(i)) primes.push(i);
+        }
+        return primes;
+      }
+
+      // Attach event listener to the button
+      const button = document.getElementById('findPrimesBtn');
+      const output = document.getElementById('output');
+
+      button.addEventListener('click', () => {
+        const inputValue = parseInt(
+          document.getElementById('inputNumber').value,
+          10
+        );
+
+        if (isNaN(inputValue) || inputValue < 0) {
+          output.textContent = 'Please enter a valid positive number.';
+          return;
+        }
+
+         const primes = findAllPrimes(inputValue);
+
+        output.textContent = `Prime numbers less than or equal to ${inputValue}: ${primes.
+        slice(0,30).
+        join(', ')}` ;
+    });
+
+```
+
+---
+
 ### 1. Currying – Write a function to find sum  
 Example: `Sum(1,2,3)(1,2)(3)` – When there is a blank param, return the result.
 
