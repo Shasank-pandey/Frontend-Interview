@@ -2,7 +2,12 @@
 
 ---
 
-### 0.1. You are given a application with:
+### 0.1. design es6 class of student (can print their name , age,roll) , teacher (can print their name , age,ID) , also there should be one school class whoch wll track of how many instance is created of all that is population.
+
+
+---
+
+### 0.2. You are given a application with:
 
 A Live Clock
 
