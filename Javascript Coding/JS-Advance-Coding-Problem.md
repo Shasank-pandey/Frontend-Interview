@@ -1,8 +1,106 @@
 # Advanced JavaScript Coding Problems
 
+
+
+---
+### 0.1 Design and Implement Circuite Breaker  
+Design and Implement Circuite Breaker in JS/node js to offload server if it fails continously
+
+```js
+class CircuitBreaker {
+  constructor(action, options = {}) {
+    this.action = action;
+    this.threshold = options.threshold || 5;
+    this.successThreshold = options.successThreshold || 2;
+    this.timeout = options.timeout || 10000;
+
+    this.failureCount = 0;
+    this.successCount = 0;
+    this.state = 'CLOSED';
+    this.nextAttempt = Date.now();
+  }
+
+  async call(...args) {
+    // If circuit is OPEN, check if we can move to HALF_OPEN
+    if (this.state === 'OPEN') {
+      if (Date.now() >= this.nextAttempt) {
+        this.state = 'HALF_OPEN';
+        console.log('Transitioning to HALF_OPEN');
+      } else {
+        console.log('CIRCUIT OPEN: blocking request');
+        throw new Error('Circuit is OPEN. Please try later.');
+      }
+    }
+
+    try {
+      const result = await this.action(...args);
+      this.onSuccess();
+      return result;
+    } catch (err) {
+      this.onFail();
+      throw err;
+    }
+  }
+
+  onSuccess() {
+    if (this.state === 'HALF_OPEN') {
+      this.successCount++;
+      if (this.successCount >= this.successThreshold) {
+        this.state = 'CLOSED';
+        this.failureCount = 0;
+        this.successCount = 0;
+        console.log('Circuit CLOSED after successful half-open attempts');
+      }
+    } else {
+      this.failureCount = 0;
+    }
+  }
+
+  onFail() {
+    this.failureCount++;
+    if (this.state === 'HALF_OPEN' || this.failureCount >= this.threshold) {
+      this.state = 'OPEN';
+      this.nextAttempt = Date.now() + this.timeout;
+      this.successCount = 0;
+      console.log('Circuit OPENED due to failures');
+    }
+  }
+}
+
+// Example function that randomly fails
+async function randomPromise() {
+  const val = Math.random() * 10;
+  if (val > 5) {
+    throw new Error('Random failure');
+  }
+  return '✅ Success!';
+}
+
+// Set up Circuit Breaker
+const options = {
+  threshold: 3,
+  successThreshold: 2,
+  timeout: 5000, // 5 seconds
+};
+
+const breaker = new CircuitBreaker(randomPromise, options);
+
+// Call every second
+setInterval(async () => {
+  try {
+    const res = await breaker.call();
+    console.log(`[${breaker.state}]`, res);
+  } catch (e) {
+    console.log(`[${breaker.state}]`, e.message);
+  }
+}, 1000);
+
+
+```
+
 ---
 
-### 0.1 Promise all-in-one (max concurrency, retry, multiple priority Queue)
+### 0.2 Promise all-in-one (max concurrency, retry, multiple priority Queue)
 Promise - Multiple Task runner on priority, retry mechanism and max concurrency
 
 ```js
