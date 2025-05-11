@@ -7,7 +7,7 @@
 
 ---
 
-### 0.2. You are given a application with:
+### 0.2. make JS thread as Multithread (Approaches : Web worker, requestIdleCallback)
 
 A Live Clock
 
@@ -26,7 +26,7 @@ The prime number computation runs without blocking the UI.
 Example: `Sum(1,2,3)(1,2)(3)` – When there is a blank param, return the result.
 
 ```js
-
+// THIS IS QUESTION CODE SNIPPET - NOT IMPLEMENTATION
 function updateClock() {
         const clockElement = document.getElementById('clock');
         const now = new Date();
