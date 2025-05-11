@@ -114,10 +114,6 @@ queue.process(() => simulateAsyncTask(6, 300));
 queue.process(() => simulateAsyncTask(7, 600)); 
 ```
 
----
-
-### 0.1 Implement an engine that process async callbacks using javascript.
-Execute an array of promise-returning functions in fixed-size batches. Wait for each batch to finish before starting the next.
 
 ---
 ### 0.2 Design and Implement Circuite Breaker  
