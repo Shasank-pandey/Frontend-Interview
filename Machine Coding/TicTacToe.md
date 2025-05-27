@@ -1,96 +1,152 @@
 ```js
-import React, { useRef, useState,useEffect } from 'react'
-import Confetti from 'js-confetti'
-import './style.css'
+import React, { useState } from 'react';
 
-const App = () => {
-  const [count, setCount] = useState(0)
-  const [grid,setGrid] = useState(buildGrid(3))
-  const [isXMove,setIsXMove] = useState(true)
-  const [winner,setWinner] =  useState(null)
+const data = [
+    {
+      id: 1,
+      name: 'README.md',
+    },
+    {
+      id: 2,
+      name: 'Documents',
+      children: [
+        {
+          id: 3,
+          name: 'Word.doc',
+        },
+        {
+          id: 4,
+          name: 'Powerpoint.ppt',
+        },
+      ],
+    },
+    {
+      id: 5,
+      name: 'Downloads',
+      children: [
+        {
+          id: 6,
+          name: 'unnamed.txt',
+        },
+        {
+          id: 7,
+          name: 'Misc',
+          children: [
+            {
+              id: 8,
+              name: 'foo.txt',
+            },
+            {
+              id: 9,
+              name: 'bar.txt',
+            },
+          ],
+        },
+      ],
+    },
+  ];
 
-  function buildGrid(n){
-    return Array(n).fill("").map(el=>Array(n).fill(""))
+const File = ({ data,AddNodeTolist,deleteNode }) => {
+  const [expandedSet, setExpandedSet] = useState(new Set());
+  const [isAdding,setIsAdding] = useState(false)
+  const [word,setWord] = useState('')
+  const [addingType,setAddingType] = useState('')
+
+  const handleClick = (id) => {
+   const copy = new Set(expandedSet)
+   if(copy.has(id)){
+      copy.delete(id)
+   } else {
+     copy.add(id)
+   }
+  setExpandedSet(copy)
+  };
+
+  const handleAdd=(id,type)=>{
+    handleClick(id)
+    setIsAdding(true)
+    setAddingType(type)
   }
-   
-  const handleClick = (row,col) => {
-    if(grid[row][col] !== ""){
-      return
-    }
-    const copy = [...grid.map(el=>el.map(item=>item))]
-    let val = isXMove ? "X" : "O"
-    copy[row][col] = val
-    setGrid(copy)
-    setIsXMove(!isXMove)
-    if(copy.every(el=>el.every(item=> item !== ""))){
-      setTimeout(()=>{
-        setGrid(buildGrid(3))
-        setWinner(null)
-      },2000)
-    }
-   checkWinner(copy,row,col,val)
-  }
 
-
-
- function checkWinner(grid,row, col, val) {
-  let localwinner = null;
-   // Check main diagonal
-  if (row === col) {
-    let mainDiagWin = true;
-    for (let i = 0; i < grid.length; i++) {
-      if (grid[i][i] !== val) {
-        mainDiagWin = false;
-        break;
-      }
-    }
-    if (mainDiagWin) localwinner = val;
+  const submitAdd=(id)=>{
+    AddNodeTolist(id,word,addingType)
+    setWord("")
+    setIsAdding(false)
   }
-
-  // Check anti-diagonal
-  if (row + col === grid.length - 1) {
-    let antiDiagWin = true;
-    for (let i = 0; i < grid.length; i++) {
-      if (grid[i][grid.length - 1 - i] !== val) {
-        antiDiagWin = false;
-        break;
-      }
-    }
-    if (antiDiagWin) localwinner = val;
-  }
-  // Check row
-  if (grid[row].every(el => el === val)) {
-    localwinner = val;
-  }
-  // Check column
-  let colwin = true;
-  grid.forEach((el, idx) => {
-    colwin = colwin && (grid[idx][col] === val);
-  });
-  if (colwin) {
-    localwinner = val;
-  }
- setWinner(localwinner)
-}
-
   
   return (
-   <div>
-     <div>winner: {winner}</div>
-     {
-       grid.map((row,rowIdx)=>{
-         return (<div style={{display:"flex"}}>{
-           row.map((col,colIdx)=>{
-              return (<div onClick={()=>{handleClick(rowIdx,colIdx)}}style={{height:"100px",width:"100px",border:"1px solid grey",display: "flex",alignItems: "center",justifyContent: "center",fontSize:"30px"}}>{col}</div>)
-           })
-         }</div>)
-       })
+    <>
+      {data?.map(item => (
+        <div>
+          <div style={{ display: 'flex', gap: '10px' }}>
+            {item?.name}
+            <div onClick={()=>handleClick(item.id)}>{item?.children?.length > 0 && '+'}</div>
+            {item?.children?.length > 0 && <div>
+                <button onClick={()=>handleAdd(item.id,'file')}>add file</button>
+                <button onClick={()=>handleAdd(item.id,'folder')}>add folder</button>
+                <button onClick={()=>deleteNode(item.id)}>Delete</button>
+            </div>}
+          </div>
+          {isAdding && expandedSet.has(item.id) && <div><input onBlur={()=>submitAdd(item.id)} onChange={(e)=>setWord(e.target.value)}/></div>}
+          
+          <div style={{ marginLeft: '10px' }}>
+            {(item?.children?.length && expandedSet.has(item.id)) > 0 && (
+              <File data={item.children} AddNodeTolist={AddNodeTolist} deleteNode={deleteNode}/>
+            )}
+          </div>
+        </div>
+      ))}
+    </>
+  );
+};
+
+export default function App(props) {
+  const [tree, setTree] = useState([...data]);
+
+   const AddNodeTolist=(id,word,type)=>{
+     const copy = [...tree]
+     const node = getNode(copy,id)
+     const obj = {
+         name : word,
+         id : Date.now(),
+         children : type === "folder" ? [] : null
      }
-   </div>
-  )
+     node.children = [obj,...node.children]
+     setTree(copy)
+  }
+
+const getNode = (data, id) => {
+  for (let item of data) {
+    if (item.id === id) {
+      return item;
+    } else if (item.children?.length) {
+      getNode(item.children, id);
+    }
+  }
+};
+
+const executeDelete = (data, id) => {
+  return data
+    .filter(el => el.id !== id)
+    .map(el => ({
+      ...el,
+      children: el.children ? executeDelete(el.children, id) : [],
+    }));
+};
+
+  const deleteNode=(id)=>{
+    const copy = [...tree]
+    const nodes = executeDelete(copy,id)
+    setTree(nodes)
+  }
+
+  return (
+    <div className='App'>
+      <File data={tree} AddNodeTolist={AddNodeTolist} deleteNode={deleteNode}/>
+    </div>
+  );
 }
 
 
-export default App
 
 ```js
