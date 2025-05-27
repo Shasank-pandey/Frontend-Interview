@@ -1,3 +1,4 @@
+```js
 import React, { useRef, useState,useEffect } from 'react'
 import Confetti from 'js-confetti'
 import './style.css'
@@ -91,3 +92,5 @@ const App = () => {
 
 
 export default App
+
+```js
