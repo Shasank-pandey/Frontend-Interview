@@ -1,6 +1,3 @@
-
-```js
-
 import React, { useRef, useState,useEffect } from 'react'
 import Confetti from 'js-confetti'
 import './style.css'
@@ -37,29 +34,28 @@ const App = () => {
 
  function checkWinner(grid,row, col, val) {
   let localwinner = null;
-  // Check main diagonal
-  if (grid[0][0] !== "") {
-    let diagWin = true;
-    grid.forEach((row, i) => {
-      if (row[i] !== val) {
-        diagWin = false;
+   // Check main diagonal
+  if (row === col) {
+    let mainDiagWin = true;
+    for (let i = 0; i < grid.length; i++) {
+      if (grid[i][i] !== val) {
+        mainDiagWin = false;
+        break;
       }
-    });
-    if (diagWin) {
-      localwinner = val;
     }
+    if (mainDiagWin) localwinner = val;
   }
+
   // Check anti-diagonal
-  if (grid[0][2] !== "") {
-    let antiDiagonal = true;
-    grid.forEach((row, i) => {
-      if (row[grid.length - 1 - i] !== val) {
-        antiDiagonal = false;
+  if (row + col === grid.length - 1) {
+    let antiDiagWin = true;
+    for (let i = 0; i < grid.length; i++) {
+      if (grid[i][grid.length - 1 - i] !== val) {
+        antiDiagWin = false;
+        break;
       }
-    });
-    if (antiDiagonal) {
-      localwinner = val;
     }
+    if (antiDiagWin) localwinner = val;
   }
   // Check row
   if (grid[row].every(el => el === val)) {
@@ -95,5 +91,3 @@ const App = () => {
 
 
 export default App
-
-```
