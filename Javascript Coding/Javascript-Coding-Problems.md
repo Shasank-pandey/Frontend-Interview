@@ -217,7 +217,7 @@ memoizedSum({ a: 123 }, 2, 3); // Executed (new reference)
 
 ---
 
-### 20. Write a currying function `sum`  
+### 22. Write a currying function `sum`  
 Example: `sum(2)(3)(5)`
 
 ---
