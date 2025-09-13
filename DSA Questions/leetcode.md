@@ -24,7 +24,7 @@
 ## Stacks
 - **20.** [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 - **155.** [Min Stack](https://leetcode.com/problems/min-stack/)
-- **Reverse Stack:** Practice reversing a stack using only push and pop operations [Adobe]
+- **Reverse Stack:** Practice reversing a stack using only push and pop operations **[Adobe]**
 
 ## Linked Lists
 - **141.** [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
@@ -50,7 +50,7 @@
 ### DFS/BFS
 - **199.** [Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)
 - **637.** [Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/)
-- **102.** [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+- **102.** [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/) **[Adobe]**
 - **103.** [Binary Tree Zigzag Level Order Traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
 
 ### Binary Search Tree
@@ -66,7 +66,7 @@
 - **46.** [Permutations](https://leetcode.com/problems/permutations/)
 - **39.** [Combination Sum](https://leetcode.com/problems/combination-sum/)
 - **22.** [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
-- **79.** [Word Search](https://leetcode.com/problems/word-search/)
+- **79.** [Word Search](https://leetcode.com/problems/word-search/)  **[Salesforce]**
 
 ## Divide and Conquer
 - **108.** [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
@@ -99,6 +99,6 @@
 ---
 
 ## Company specific questions:
-- A frog wants to cross a river. The river has a series of stepping stones. The frog starts at position 0 and needs to reach a final position, say position n. The frog can jump a maximum of k steps at a time (e.g., 1, 2, or 3 jumps). How many different ways can the frog reach position n? [Agoda]
-- Given an array of integers, find all "pivot" elements where all elements to its left are less than or equal to it all elements to its right are greater than or equal to it? [Agoda]
+- A frog wants to cross a river. The river has a series of stepping stones. The frog starts at position 0 and needs to reach a final position, say position n. The frog can jump a maximum of k steps at a time (e.g., 1, 2, or 3 jumps). How many different ways can the frog reach position n? **[Agoda]**
+- Given an array of integers, find all "pivot" elements where all elements to its left are less than or equal to it all elements to its right are greater than or equal to it? **[Agoda]**
 
