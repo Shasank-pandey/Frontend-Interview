@@ -1,5 +1,7 @@
 # LeetCode Frontend Preparation Guide
 
+**STEPS :**  Open Leetcode and Login **-->** Open https://leetcode.com/studyplan/top-interview-150/ **-->** click on "show tag" checkbox
+
 ## Arrays & Strings
 **Solve all Easy/Medium**  
 
