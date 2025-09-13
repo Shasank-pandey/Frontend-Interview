@@ -1,16 +1,13 @@
 # LeetCode Frontend Preparation Guide
 
 ## Arrays & Strings
-**Difficulty: Easy/Medium**  
-General problems covering manipulation, searching, and sorting.
+**Solve all Easy/Medium**  
 
 ## Two Pointers
-**Difficulty: Easy/Medium**  
-Problems that use two pointers to traverse arrays or strings efficiently, often for finding pairs or sub-sequences.
+**Solve all Easy/Medium**  
 
 ## Sliding Window
-**Difficulty: Medium**  
-Focus on problems that use the sliding window technique to find a maximum or minimum subarray/substring of a given size.
+**Solve all Easy/Medium**  
 
 ## Matrix
 - **54.** [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
@@ -18,8 +15,7 @@ Focus on problems that use the sliding window technique to find a maximum or min
 - **73.** [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)
 
 ## Hash Map
-**Difficulty: Easy/Medium**  
-Problems where a hash map is essential for efficient lookups, counting frequencies, or tracking element relationships.
+**Solve all Easy/Medium**  
 
 ## Intervals
 - **56.** [Merge Intervals](https://leetcode.com/problems/merge-intervals/)
@@ -28,7 +24,7 @@ Problems where a hash map is essential for efficient lookups, counting frequenci
 ## Stacks
 - **20.** [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 - **155.** [Min Stack](https://leetcode.com/problems/min-stack/)
-- **Reverse Stack:** Practice reversing a stack using only push and pop operations
+- **Reverse Stack:** Practice reversing a stack using only push and pop operations [Adobe]
 
 ## Linked Lists
 - **141.** [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
@@ -102,9 +98,7 @@ Problems where a hash map is essential for efficient lookups, counting frequenci
 
 ---
 
-## Tips for Frontend Interviews
-- Focus on **time and space complexity** analysis
-- Practice **explaining your thought process** out loud
-- Master the **most common patterns** first
-- **Code cleanly** with good variable names
-- Practice **edge cases** and **error handling**
+## Company specific questions:
+- A frog wants to cross a river. The river has a series of stepping stones. The frog starts at position 0 and needs to reach a final position, say position n. The frog can jump a maximum of k steps at a time (e.g., 1, 2, or 3 jumps). How many different ways can the frog reach position n? [Agoda]
+- Given an array of integers, find all "pivot" elements where all elements to its left are less than or equal to it all elements to its right are greater than or equal to it? [Agoda]
+
