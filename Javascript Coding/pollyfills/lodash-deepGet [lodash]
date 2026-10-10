@@ -1,19 +1,34 @@
+/***********
+  deepGet(obj, path, defaultValue)   (like lodash _.get)
 
-function deepGet(obj,path,defualt){
-    if(obj === null || typeof obj !== 'object') return obj
-    
-    let key = Array.isArray(path) ? path : path.split(".")
-    
-    let result = obj
-    
-    for(let item of key){
-        if(obj && typeof result === 'object' && result.hasOwnProperty(item)){
-            result=result[item]
-        } else {
-            return defualt
-        }
+  LOGIC
+  1. Turn the path into an array of keys: use it as is if it is already
+     an array, otherwise split a string like 'a.b.c' on dots.
+  2. Start with result = obj and loop over the keys.
+  3. Before each step, if result is null or undefined there is nothing
+     left to read, so return defaultValue.
+  4. Otherwise move down one level: result = result[key].
+  5. After the loop, if the final value is undefined return defaultValue,
+     else return the value.
+
+  COMPLEXITY: O(k) time for k keys, O(k) space for the keys array.
+**************/
+
+
+
+
+function deepGet(obj, path, defaultValue) {
+  const keys = Array.isArray(path) ? path : path.split('.');
+  let result = obj;
+
+  for (const key of keys) {
+    if (result === null || result === undefined) {
+      return defaultValue;
     }
-    return result
+    result = result[key];
+  }
+
+  return result === undefined ? defaultValue : result;
 }
 
 
