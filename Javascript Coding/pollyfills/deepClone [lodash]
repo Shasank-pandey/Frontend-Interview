@@ -1,4 +1,4 @@
-/*
+/****************************
   deepClone(value)
 
   LOGIC
@@ -16,7 +16,7 @@
 
   NOT HANDLED YET: Date, RegExp, Map, Set, Symbol keys, class prototypes.
   TESTS: copy !== original, copy.y !== original.y, circular (c.self = c), null inside object.
-*/
+*****************************/
 
 function deepClone(value, seen = new WeakMap()) {
   if (value === null || typeof value !== 'object') return value;
